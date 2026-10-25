@@ -1,0 +1,89 @@
+[center][size=200][b][color=#1B5A85]✈️ ¡DESPEGA DEL FONDO! ✈️[/color][/b][/size]
+[size=120][b]Concurso de Sky Hero para los pilotos de eEspaña[/b][/size]
+[i]1.200.000 cc en premios · del 20 de octubre al 16 de noviembre[/i][/center]
+
+[center][color=#A9D3EA]━━━━━━━━━━━━━━━━━━━━━━━━[/color][/center]
+
+[size=150][b]🎯 En una frase[/b][/size]
+
+Si estás entre los pilotos que [b]menos SH ganan[/b], te pagamos por [b]subir puestos[/b]. Y si toda España farmea más, [b]todos los premios suben[/b].
+
+[size=130][b]👉 Mira cómo vas: [url=https://csbcoder.github.io/estafa/#torneo]csbcoder.github.io/estafa[/url][/b][/size]
+Escribe tu nombre en "¿Cómo va tu piloto?" y verás tu nivel, tu premio y cuántas SH te faltan. Se actualiza [b]cada día[/b].
+
+[center][color=#A9D3EA]━━━━━━━━━━━━━━━━━━━━━━━━[/color][/center]
+
+[size=150][b]📅 Fechas[/b][/size]
+[list]
+[*][b]Bloque 1:[/b] del martes 20 de octubre al lunes 2 de noviembre
+[*][b]Bloque 2:[/b] del martes 3 al lunes 16 de noviembre
+[/list]
+Cada bloque dura dos semanas y se compara con las [b]dos semanas anteriores[/b]. Cuentan los días del servidor de eRepublik.
+
+[center][color=#A9D3EA]━━━━━━━━━━━━━━━━━━━━━━━━[/color][/center]
+
+[size=150][b]👥 Quién participa[/b][/size]
+[list]
+[*]Los pilotos que en las dos semanas anteriores al bloque quedaron en el [b]P60–P100[/b] (el 40 % con menos SH).
+[*]Los que [b]no ganaron ninguna SH[/b] en esas dos semanas.
+[*][b]No hay que apuntarse:[/b] si cumples, ya estás dentro.
+[/list]
+Para el bloque 1 cuentan las semanas del 6 al 19 de octubre: [b]95 pilotos[/b] pueden ganar premio.
+
+[center][color=#A9D3EA]━━━━━━━━━━━━━━━━━━━━━━━━[/color][/center]
+
+[size=150][b]🪜 Cómo se gana: subiendo escalones[/b][/size]
+
+Te colocamos en un nivel según tus SH entre todos los pilotos españoles. Cobras [b]cada escalón que subas[/b] desde tu nivel de salida, y se suman:
+
+[list]
+[*]Sin SH → P80–P100: [b][color=#E0901A]6.000 cc[/color][/b]
+[*]P80–P100 → P60–P80: [b][color=#E0901A]16.000 cc[/color][/b]
+[*]P60–P80 → P40–P60: [b][color=#E0901A]30.000 cc[/color][/b]
+[*]⭐ P40–P60 → P20–P40: [b][color=#E0901A]60.000 cc[/color][/b] ⭐ el gran premio
+[*]P20–P40 → P0–P20: 0 (llegar arriba del todo no da nada extra)
+[/list]
+
+[b]Ejemplos:[/b]
+[list]
+[*]De P60–P80 a P40–P60: [b]30.000 cc[/b]
+[*]De P60–P80 a P20–P40: 30.000 + 60.000 = [b]90.000 cc[/b]
+[*]De P80–P100 a P20–P40: [b]106.000 cc[/b]
+[*]De no volar nada a P20–P40: [b]112.000 cc[/b]
+[/list]
+
+Para llegar al P20–P40 harán falta, más o menos, [b]25–30 SH en las dos semanas[/b] (unas 12–14 por semana). La cifra exacta de cada día está en la web.
+
+[center][color=#A9D3EA]━━━━━━━━━━━━━━━━━━━━━━━━[/color][/center]
+
+[size=150][b]🇪🇸 El factor nacional: si España vuela, todos cobran más[/b][/size]
+
+Todos los premios del bloque se multiplican por un factor que depende del farmeo de [b]toda España[/b], comparado con las semanas 6 y 7 (1.769 SH por semana):
+
+[center][b]Factor = 1 + 3 × la variación de España[/b] (entre ×0,5 y ×2)[/center]
+
+[list]
+[*]España igual que en la referencia: [b]×1[/b]
+[*]España un 10 % por encima: [b]×1,30[/b] → los 60.000 se convierten en 78.000
+[*]España un 5 % por debajo: [b]×0,85[/b] → los 60.000 se quedan en 51.000
+[/list]
+La variación es la media de las SH y del oro total (BH + SH), así que [b]el farmeo de tierra también cuenta[/b]. La web enseña el factor previsto cada día.
+
+[b]Moraleja:[/b] anima a tus compañeros a volar. Cuanto más farmee España, más cobras tú.
+
+[center][color=#A9D3EA]━━━━━━━━━━━━━━━━━━━━━━━━[/color][/center]
+
+[size=150][b]📏 Letra pequeña[/b][/size]
+[list]
+[*][b]Regla anti-chollo:[/b] para cobrar necesitas al menos [b]3 SH[/b] en el bloque y [b]2 más[/b] que en las dos semanas anteriores. La reactivación (de 0 SH a P80–P100) se cobra con 1 SH.
+[*][b]Empates:[/b] los empatados se quedan con el mejor puesto.
+[*][b]Tope:[/b] 600.000 cc por bloque. Si los premios lo superan, se reducen todos en la misma proporción.
+[*][b]Bote final:[/b] lo que sobre del presupuesto se lo lleva el piloto del fondo de las semanas 6–7 que [b]más SH sume[/b] en las cuatro semanas.
+[*]Cada SH cuenta en el día en que empezó su batalla. Datos de [url=https://battle-stats.yurii.live/]battle-stats[/url], de [b]driversti[/b] (¡gracias!).
+[/list]
+
+[center][color=#A9D3EA]━━━━━━━━━━━━━━━━━━━━━━━━[/color][/center]
+
+[center][size=130][b]Cada SH son 10 de oro para eEspaña. ¡Despega del fondo! ✈️🇪🇸[/b][/size]
+
+[i]Dudas y sugerencias, en los comentarios.[/i][/center]
