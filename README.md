@@ -11,24 +11,17 @@ battle-stats.yurii.live  ──(cada día, GitHub Actions)──>  scripts/fetch
                                                           scripts/build.py  ──>  data/*.csv (histórico)
                                                                              └─>  site/data/sh.js (datos de la web)
                                                                    │
-                                                          GitHub Pages publica site/
+                                                          Netlify publica site/ en https://estafa.netlify.app/
 ```
 
 La web no tiene servidor: todo (percentiles, torneos, fichas de piloto) se calcula en el navegador con `site/data/sh.js`.
 
-## Publicarlo en GitHub (una sola vez)
+## Dónde está publicado
 
-La forma más cómoda sin saber programar es **GitHub Desktop** (https://desktop.github.com):
+- **Web:** https://estafa.netlify.app/ — Netlify está conectado al repositorio de GitHub y publica la carpeta `site/` (lo dice `netlify.toml`) cada vez que cambia algo en el repositorio.
+- **Repositorio:** https://github.com/CSBCoder/estafa — guarda el código y los datos, y su robot (GitHub Actions) descarga los datos cada día. Tiene que ser público para que el robot sea gratis.
 
-1. Instala GitHub Desktop e inicia sesión con tu cuenta de GitHub.
-2. **File > Add local repository…** y elige esta carpeta (`estafa`). Te dirá que no es un repositorio: pulsa **create a repository**, deja el nombre `estafa` y pulsa **Create repository**.
-3. Pulsa **Publish repository**. **Quita** la marca "Keep this code private": GitHub Pages gratis solo funciona con repositorios públicos.
-4. En la web de GitHub, entra en el repositorio y ve a **Settings > Pages**. En **Source** elige **GitHub Actions**.
-5. **Settings > Actions > General > Workflow permissions**: marca **Read and write permissions** y guarda.
-6. Pestaña **Actions** > "Actualizar ESTAFA" > **Run workflow** para lanzarlo la primera vez (tarda 1–2 minutos).
-7. La web queda en `https://TU-USUARIO.github.io/estafa/`.
-
-Si prefieres no instalar nada, puedes crear el repositorio en github.com y arrastrar los archivos con **Add file > Upload files**, pero comprueba que se sube también la carpeta oculta `.github` (sin ella no hay actualización automática).
+Para cambiar algo (por ejemplo `data/torneos.json`), lo más fácil es editarlo en la web de GitHub con el lápiz del archivo: el robot regenera los datos y Netlify publica el cambio en un par de minutos.
 
 ### Actualización diaria
 
@@ -37,7 +30,7 @@ El archivo `.github/workflows/update.yml` lo lanza **una vez al día a las 9:23 
 - `23 */12 * * *` → cada 12 horas
 - `23 9 * * 2` → solo los martes
 
-Cada ejecución hace 1 petición del CSV de SH y 1 o 2 de la página de país. Si se publica algo a mano (un cambio en `site/`, `scripts/` o `data/`), la web se vuelve a publicar sola, sin descargar datos.
+Cada ejecución hace 1 petición del CSV de SH y 1 o 2 de la página de país. Si cambias algo en `scripts/` o `data/`, el robot regenera `site/data/sh.js` sin descargar datos. Cada vez que el robot guarda, Netlify vuelve a publicar la web.
 
 Nota: GitHub pausa las tareas programadas de un repositorio público si pasa 60 días sin actividad. Si un día deja de actualizarse, entra en **Actions** y pulsa **Enable workflow**.
 

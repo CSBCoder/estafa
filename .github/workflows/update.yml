@@ -1,17 +1,17 @@
 name: Actualizar ESTAFA
+# Descarga los datos y los guarda en el repositorio. La web la publica Netlify (netlify.toml)
+# cada vez que cambia el repositorio, así que aquí no se publica nada.
 
 on:
   schedule:
     - cron: "23 9 * * *"     # una vez al día, a las 9:23 UTC (2:23 hora del servidor de eRepublik)
   workflow_dispatch: {}       # botón "Run workflow" para lanzarlo a mano
-  push:
+  push:                       # si cambias torneos.json o los scripts, se regenera site/data/sh.js
     branches: [main]
-    paths: ["site/**", "scripts/**", "data/**"]
+    paths: ["scripts/**", "data/**"]
 
 permissions:
   contents: write
-  pages: write
-  id-token: write
 
 concurrency:
   group: estafa
@@ -20,9 +20,6 @@ concurrency:
 jobs:
   update:
     runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deploy.outputs.page_url }}
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -35,7 +32,7 @@ jobs:
         run: python scripts/fetch_sh.py
       - name: Descargar BH y CH semanales
         if: github.event_name != 'push'
-        continue-on-error: true   # si falla, se publica igual con las SH
+        continue-on-error: true   # si falla, se guardan igual las SH
         run: python scripts/fetch_players.py
       - name: Unir al histórico y generar datos
         run: python scripts/build.py
@@ -46,8 +43,3 @@ jobs:
           git add data site/data/sh.js   # data/raw está en .gitignore
           git diff --cached --quiet || git commit -m "Datos actualizados $(date -u +'%Y-%m-%d %H:%M') UTC"
           git push
-      - uses: actions/upload-pages-artifact@v3
-        with:
-          path: site
-      - id: deploy
-        uses: actions/deploy-pages@v4
