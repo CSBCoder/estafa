@@ -1,11 +1,11 @@
 # ESTAFA · Estadísticas del Frente Aéreo
 
-Dashboard del farmeo de Sky Hero en eEspaña (eRepublik), con el torneo bisemanal **¡Despega del fondo!**. Web estática en `site/`, con los datos actualizados automáticamente cada día por GitHub Actions.
+Dashboard del farmeo de Sky Hero en eEspaña (eRepublik), con el torneo bisemanal **¡Despega del fondo!**. Web estática en `site/`, con los datos actualizados automáticamente cada 3 días por GitHub Actions.
 
 ## Cómo funciona
 
 ```
-battle-stats.yurii.live  ──(cada día, GitHub Actions)──>  scripts/fetch_sh.py       CSV de SH (una fila por medalla)
+battle-stats.yurii.live  ──(cada 3 días, Actions)───>  scripts/fetch_sh.py       CSV de SH (una fila por medalla)
                                                           scripts/fetch_players.py  BH y CH por jugador y semana
                                                                    │
                                                           scripts/build.py  ──>  data/*.csv (histórico)
@@ -19,14 +19,15 @@ La web no tiene servidor: todo (percentiles, torneos, fichas de piloto) se calcu
 ## Dónde está publicado
 
 - **Web:** https://estafa.netlify.app/ — Netlify está conectado al repositorio de GitHub y publica la carpeta `site/` (lo dice `netlify.toml`) cada vez que cambia algo en el repositorio.
-- **Repositorio:** https://github.com/CSBCoder/estafa — guarda el código y los datos, y su robot (GitHub Actions) descarga los datos cada día. Tiene que ser público para que el robot sea gratis.
+- **Repositorio:** https://github.com/CSBCoder/estafa — guarda el código y los datos, y su robot (GitHub Actions) descarga los datos cada 3 días. Tiene que ser público para que el robot sea gratis.
 
 Para cambiar algo (por ejemplo `data/torneos.json`), lo más fácil es editarlo en la web de GitHub con el lápiz del archivo: el robot regenera los datos y Netlify publica el cambio en un par de minutos.
 
 ### Actualización diaria
 
-El archivo `.github/workflows/update.yml` lo lanza **una vez al día a las 9:23 UTC** (madrugada en el servidor de eRepublik, ya con el día anterior cerrado). Para cambiar la hora, edita la línea `cron`:
-- `23 9 * * *` → cada día a las 9:23 UTC
+El archivo `.github/workflows/update.yml` lo lanza **cada 3 días a las 9:23 UTC** (los días 1, 4, 7… de cada mes; madrugada en el servidor de eRepublik, ya con el día anterior cerrado). Se bajó de diario a cada 3 días para no gastar los créditos gratis de Netlify, que cobra cada publicación. No se pierden datos: cada descarga trae los últimos 30 días. Para cambiar la frecuencia, edita la línea `cron`:
+- `23 9 */3 * *` → cada 3 días (ahora)
+- `23 9 * * *` → cada día
 - `23 */12 * * *` → cada 12 horas
 - `23 9 * * 2` → solo los martes
 
@@ -70,6 +71,6 @@ Para añadir un CSV descargado a mano: `python scripts/build.py ruta/al/archivo.
 
 ## Antes de publicar
 
-- Avisa a driversti (autor de battle-stats, t.me/driversti) de que ESTAFA consultará su API una vez al día, y dale las gracias en el foro. La web ya le cita en el pie de página.
+- Avisa a driversti (autor de battle-stats, t.me/driversti) de que ESTAFA consultará su API cada 3 días, y dale las gracias en el foro. La web ya le cita en el pie de página.
 
 Todo el contexto del proyecto, para seguir trabajando con Claude Code, está en `CLAUDE.md`.

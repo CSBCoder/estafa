@@ -9,7 +9,7 @@
 Si estás entre los pilotos que [b]menos SH ganan[/b], te pagamos por [b]subir puestos[/b]. Y si toda España farmea más, [b]todos los premios suben[/b].
 
 [size=130][b]👉 Mira cómo vas: [url=https://estafa.netlify.app/#torneo]estafa.netlify.app[/url][/b][/size]
-Escribe tu nombre en "¿Cómo va tu piloto?" y verás tu nivel, tu premio y cuántas SH te faltan. Se actualiza [b]cada día[/b].
+Escribe tu nombre en "¿Cómo va tu piloto?" y verás tu nivel, tu premio y cuántas SH te faltan. Se actualiza [b]cada 3 días[/b].
 
 [center][color=#A9D3EA]━━━━━━━━━━━━━━━━━━━━━━━━[/color][/center]
 
@@ -52,7 +52,7 @@ Te colocamos en un nivel según tus SH entre todos los pilotos españoles. Cobra
 [*]De no volar nada a P20–P40: [b]112.000 cc[/b]
 [/list]
 
-Para llegar al P20–P40 harán falta, más o menos, [b]25–30 SH en las dos semanas[/b] (unas 12–14 por semana). La cifra exacta de cada día está en la web.
+Para llegar al P20–P40 harán falta, más o menos, [b]25–30 SH en las dos semanas[/b] (unas 12–14 por semana). La cifra exacta está en la web.
 
 [center][color=#A9D3EA]━━━━━━━━━━━━━━━━━━━━━━━━[/color][/center]
 
@@ -67,7 +67,7 @@ Todos los premios del bloque se multiplican por un factor que depende del farmeo
 [*]España un 10 % por encima: [b]×1,30[/b] → los 60.000 se convierten en 78.000
 [*]España un 5 % por debajo: [b]×0,85[/b] → los 60.000 se quedan en 51.000
 [/list]
-La variación es la media de las SH y del oro total (BH + SH), así que [b]el farmeo de tierra también cuenta[/b]. La web enseña el factor previsto cada día.
+La variación es la media de las SH y del oro total (BH + SH), así que [b]el farmeo de tierra también cuenta[/b]. La web enseña el factor previsto.
 
 [b]Moraleja:[/b] anima a tus compañeros a volar. Cuanto más farmee España, más cobras tú.
 

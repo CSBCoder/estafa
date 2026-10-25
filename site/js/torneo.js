@@ -131,7 +131,7 @@ function head(t){
  const B=bote(),win=t.rows.filter(r=>r.pay>0),zero=t.rows.filter(r=>!r.q).length;
  const K=t.st==='proximo'?[
   ['gold',t.rows.length,'Pilotos clasificados (provisional)',`${t.rows.length-zero} del fondo + ${zero} sin SH`],
-  ['',rg(t.q0,t.q1),'Nivel de salida','todavía en juego: la lista cambia cada día'],
+  ['',rg(t.q0,t.q1),'Nivel de salida','todavía en juego: la lista puede cambiar hasta que se cierre'],
   ['gold',money(B.left),'Presupuesto que queda',`de ${money(C.presupuesto_total||0)}`]
  ]:[
   ['',t.rows.length,'Pilotos que compiten',`${t.rows.length-zero} del fondo + ${zero} sin SH en ${rg(t.q0,t.q1)}`],
@@ -212,7 +212,7 @@ function rules(){
   <li><strong>Factor nacional:</strong> todos los premios del bloque se multiplican por 1 + ${AMP} × la variación de España frente a ${rg(R0,R1)}${useGold?' (media de la variación de SH y la del oro total)':''}, entre ${fx(FMIN)} y ${fx(FMAX)}.</li>
   <li><strong>Anti-chollo:</strong> para cobrar hay que tener al menos ${MIN} SH en el bloque y ${MEJ} más que en las dos semanas anteriores. La reactivación se cobra con ${MINR} SH.</li>
   <li><strong>Presupuesto:</strong> ${money(C.presupuesto_total||0)}, con un tope de ${money(TOPE)} por bloque; si se pasa, todos los premios se reducen en la misma proporción. Lo que sobre va al bote final.</li>
-  <li>Los datos se actualizan cada día. Cada SH cuenta en el día en que empezó su batalla.</li></ul>`;
+  <li>Los datos se actualizan cada 3 días (mira la fecha arriba del todo). Cada SH cuenta en el día en que empezó su batalla.</li></ul>`;
 }
 
 function setHash(){try{history.replaceState(null,'','#torneo/'+ST.t.n+(ST.p!=null?'/'+D.ids[ST.p]:''))}catch(e){}}

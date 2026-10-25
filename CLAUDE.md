@@ -23,13 +23,13 @@ scripts/
   fetch_sh.py         Descarga el CSV detallado de SH de España
   fetch_players.py    Descarga BH/CH semanales (solo las semanas que faltan o pueden cambiar)
   build.py            Une CSV nuevos al histórico y genera site/data/sh.js (con bh y torneos)
-.github/workflows/update.yml   Descarga + build + commit, una vez al día (9:23 UTC); Netlify publica
-netlify.toml          Netlify publica solo site/
+.github/workflows/update.yml   Descarga + build + commit cada 3 días (9:23 UTC, días 1, 4, 7… del mes); Netlify publica
+netlify.toml          Netlify publica solo site/, y solo si cambia algo dentro (ignore)
 .claude/launch.json   Servidor local (python -m http.server 8765) para la vista previa
 docs/                 Artículo de presentación y tabla del concurso en BBCode phpBB
 ```
 
-**Publicado** el 25 oct 2026: repositorio público https://github.com/CSBCoder/estafa, web pública **https://estafa.netlify.app/** (Netlify conectado al repositorio, publica `site/` según netlify.toml y se redespliega con cada commit del robot). GitHub Pages está **apagado** (25 oct 2026) y el workflow ya no publica: solo descarga y guarda datos. Josemi prefiere Netlify para que no se vea su usuario de GitHub en la dirección. El robot sube datos cada día, así que antes de cambiar algo en local hay que hacer `git pull`. Los commits usan el correo noreply de GitHub (configurado solo en este repositorio) para no publicar el correo personal.
+**Publicado** el 25 oct 2026: repositorio público https://github.com/CSBCoder/estafa, web pública **https://estafa.netlify.app/** (Netlify conectado al repositorio, publica `site/` según netlify.toml y se redespliega con cada commit del robot). GitHub Pages está **apagado** (25 oct 2026) y el workflow ya no publica: solo descarga y guarda datos. Josemi prefiere Netlify para que no se vea su usuario de GitHub en la dirección. Desde el 25 oct 2026 el robot va cada 3 días (no diario) para ahorrar créditos de Netlify, que cobra cada publicación. El robot sube datos, así que antes de cambiar algo en local hay que hacer `git pull`. Los commits usan el correo noreply de GitHub (configurado solo en este repositorio) para no publicar el correo personal.
 
 Para probar en local: `pip install -r requirements.txt`, `python scripts/build.py` y abrir `site/index.html` en el navegador (funciona con file://).
 
@@ -104,7 +104,7 @@ Normas acordadas con Josemi el 25 oct 2026:
 
 ## Pendiente / ideas
 
-1. Avisar a driversti de que ESTAFA consulta su API una vez al día.
+1. Avisar a driversti de que ESTAFA consulta su API cada 3 días.
 2. BH y CH ya se descargan, salen en el Registro y entran en el factor nacional (oro total). Falta, si Josemi quiere, una sección BH propia.
 3. Inscripción real en torneos: hoy es automática. Opciones sin servidor: formulario (Google Forms / GitHub Issues) y Josemi copia los ID a `inscritos`.
 4. Si el JS crece, seguir dividiendo en archivos como torneo.js. No meter frameworks salvo que Josemi lo pida.

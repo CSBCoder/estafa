@@ -4,7 +4,7 @@ name: Actualizar ESTAFA
 
 on:
   schedule:
-    - cron: "23 9 * * *"     # una vez al día, a las 9:23 UTC (2:23 hora del servidor de eRepublik)
+    - cron: "23 9 */3 * *"   # cada 3 días (los días 1, 4, 7… de cada mes), a las 9:23 UTC (2:23 hora del servidor de eRepublik)
   workflow_dispatch: {}       # botón "Run workflow" para lanzarlo a mano
   push:                       # si cambias torneos.json o los scripts, se regenera site/data/sh.js
     branches: [main]

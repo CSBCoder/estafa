@@ -3,3 +3,6 @@
 [build]
   publish = "site"
   command = ""
+  # Solo se publica si cambia algo dentro de site/ (ahorra créditos de Netlify):
+  # editar torneos.json, scripts o documentación no publica; lo hace el commit del robot que regenera site/data/sh.js
+  ignore = "git diff --quiet $CACHED_COMMIT_REF $COMMIT_REF -- site/"
