@@ -1,0 +1,5 @@
+# Netlify: publicar solo la web (site/), sin compilar nada.
+# Los datos los genera el robot de GitHub Actions y los sube al repositorio cada día.
+[build]
+  publish = "site"
+  command = ""
