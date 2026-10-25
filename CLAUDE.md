@@ -28,6 +28,8 @@ scripts/
 docs/                 Artículo de presentación y tabla del concurso en BBCode phpBB
 ```
 
+**Publicado** el 25 oct 2026: repositorio público https://github.com/CSBCoder/estafa, web https://csbcoder.github.io/estafa/ (Pages desde GitHub Actions). El robot sube datos cada día, así que antes de cambiar algo en local hay que hacer `git pull`. Los commits usan el correo noreply de GitHub (configurado solo en este repositorio) para no publicar el correo personal.
+
 Para probar en local: `pip install -r requirements.txt`, `python scripts/build.py` y abrir `site/index.html` en el navegador (funciona con file://).
 
 ## Fuente de datos
@@ -101,7 +103,7 @@ Normas acordadas con Josemi el 25 oct 2026:
 
 ## Pendiente / ideas
 
-1. Publicar en GitHub (pasos en README) y avisar a driversti. Aún no publicado a fecha 25 oct 2026.
+1. Avisar a driversti de que ESTAFA consulta su API una vez al día.
 2. BH y CH ya se descargan, salen en el Registro y entran en el factor nacional (oro total). Falta, si Josemi quiere, una sección BH propia.
 3. Inscripción real en torneos: hoy es automática. Opciones sin servidor: formulario (Google Forms / GitHub Issues) y Josemi copia los ID a `inscritos`.
 4. Si el JS crece, seguir dividiendo en archivos como torneo.js. No meter frameworks salvo que Josemi lo pida.
