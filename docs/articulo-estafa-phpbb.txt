@@ -1,0 +1,144 @@
+[center][size=200][b][color=#1B5A85]✈️ ESTAFA ✈️[/color][/b][/size]
+[size=120][b]Estadísticas del Frente Aéreo[/b][/size]
+[i]El parte semanal del farmeo de Sky Heroes en eEspaña[/i][/center]
+
+[center][img]URL_IMAGEN_1[/img][/center]
+[color=#999999][size=85][i]>> IMAGEN 1 (borrar esta línea): captura de la cabecera del dashboard ESTAFA, con el banner verde "ESTAFA", el oro generado y la barra de objetivo semanal.[/i][/size][/color]
+
+[center][color=#A9D3EA]━━━━━━━━━━━━━━━━━━━━━━━━[/color][/center]
+
+[size=150][b]📢 ¿Qué es ESTAFA?[/b][/size]
+
+Ciudadanos de eEspaña:
+
+Presentamos [b]ESTAFA[/b], un panel que recoge [b]todas las medallas Sky Hero (SH)[/b] que ganan los pilotos españoles, ronda a ronda. Cada SH son [b][color=#E0901A]10 de oro 🪙[/color][/b], así que contar medallas es contar el oro que entra en el país.
+
+Con ESTAFA podemos ver cada semana, de martes a lunes:
+[list]
+[*]💰 Cuánto oro genera eEspaña con el farmeo aéreo
+[*]📈 Si vamos a más o a menos
+[*]👥 Cómo se reparte ese oro entre los pilotos
+[*]💥 Cuánto daño cuesta de verdad una SH
+[/list]
+
+Los datos van del [b]31 de agosto al 21 de octubre[/b]: más de [b]12.300 SH[/b] y [b]172 pilotos[/b].
+
+[center][color=#A9D3EA]━━━━━━━━━━━━━━━━━━━━━━━━[/color][/center]
+
+[size=150][b]💰 Lo que gana eEspaña cada semana[/b][/size]
+
+De media, los pilotos españoles ganan [b]unas 1.680 SH por semana[/b], es decir, [b][color=#E0901A]casi 17.000 de oro semanales[/color][/b] que entran en los bolsillos de nuestros ciudadanos.
+
+[center][img]URL_IMAGEN_2[/img][/center]
+[color=#999999][size=85][i]>> IMAGEN 2 (borrar esta línea): captura del gráfico "Semana a semana" de ESTAFA, con las barras de SH de las semanas 1 a 7 y los porcentajes de subida y bajada encima.[/i][/size][/color]
+
+[b]📅 Evolución de las últimas semanas[/b]
+[list]
+[*]Semana 1 (1–7 sep): [b]1.635 SH[/b] · 16.350 oro
+[*]Semana 2 (8–14 sep): [b]1.683 SH[/b] · 16.830 oro [color=#3F8A20]▲ +2,9 %[/color]
+[*]Semana 3 (15–21 sep): [b]1.610 SH[/b] · 16.100 oro [color=#C8372D]▼ -4,3 %[/color]
+[*]Semana 4 (22–28 sep): [b]1.699 SH[/b] · 16.990 oro [color=#3F8A20]▲ +5,5 %[/color]
+[*]Semana 5 (29 sep – 5 oct): [b]1.605 SH[/b] · 16.050 oro [color=#C8372D]▼ -5,5 %[/color]
+[*]Semana 6 (6–12 oct): [b]1.721 SH[/b] · 17.210 oro [color=#3F8A20]▲ +7,2 %[/color]
+[*]Semana 7 (13–19 oct): [b]1.817 SH[/b] · 18.170 oro [color=#3F8A20]▲ +5,6 %[/color] 🏆 [i]récord[/i]
+[/list]
+
+[size=130][b]🚀 El efecto Mari Toli[/b][/size]
+
+Desde la llegada de [b]Mari Toli[/b], el farmeo español ha dado un salto:
+[list]
+[*]Antes (semanas 1 a 5): [b]1.646 SH[/b] de media por semana
+[*]Después (semanas 6 y 7): [b]1.769 SH[/b] de media por semana
+[*]Eso es un [b][color=#3F8A20]+7,4 %[/color][/b], unos [b]1.200 de oro más cada semana[/b]
+[*]Y la semana 7 marca el [b]récord[/b] del registro: [b]18.170 de oro[/b]
+[/list]
+
+Lo interesante es que el número de pilotos con SH sigue igual (unos 118 por semana). [b]No vuelan más pilotos: los que vuelan, farmean mejor.[/b] Así que todavía queda mucho margen si sumamos gente.
+
+[center][color=#A9D3EA]━━━━━━━━━━━━━━━━━━━━━━━━[/color][/center]
+
+[size=150][b]⚖️ La mitad de los pilotos se lo lleva casi todo[/b][/size]
+
+Si ordenamos a los pilotos por SH ganadas, el reparto es muy desigual:
+[list]
+[*]🥇 El [b]10 %[/b] de pilotos que más SH gana se lleva casi [b]la mitad del oro[/b] (47,7 %)
+[*]🥈 El [b]25 %[/b] que más gana se lleva [b]tres cuartas partes[/b] (75,8 %)
+[*]🥉 El [b]50 %[/b] que más gana se lleva el [b][color=#C8372D]96 % del oro[/color][/b]
+[*]😴 La [b]otra mitad[/b] de los pilotos apenas suma el [b]4 %[/b]
+[/list]
+
+[center][img]URL_IMAGEN_3[/img][/center]
+[color=#999999][size=85][i]>> IMAGEN 3 (borrar esta línea): captura de la sección "Reparto del oro por percentiles" de ESTAFA, con las barras azules (% de pilotos) y naranjas (% del oro) de cada grupo, y si cabe la curva de acumulación.[/i][/size][/color]
+
+En la semana 7, la mitad superior de los pilotos ganó [b]27 SH de media[/b] cada uno. La mitad inferior, [b]menos de 3[/b]. Hay decenas de pilotos que vuelan de vez en cuando y dejan el oro sobre la mesa.
+
+[center][color=#A9D3EA]━━━━━━━━━━━━━━━━━━━━━━━━[/color][/center]
+
+[size=150][b]💥 ¿Cuánto cuesta una SH?[/b][/size]
+
+Hemos medido el daño con el que se ganó cada medalla:
+[list]
+[*]🎯 La SH típica se gana con unos [b]41.000 de daño[/b]
+[*]📊 La mitad de las medallas cuesta entre [b]30.000 y 60.000[/b]
+[*]🟢 [b]1 de cada 4 SH[/b] se gana con menos de [b]30.000[/b]
+[*]🎁 Hay rondas casi regaladas: un 3 % de las medallas se ganó con [b]menos de 10.000[/b], ¡alguna con menos de 100 de daño!
+[*]🔴 Solo el [b]6 %[/b] pasa de 100.000. Las rondas carísimas, de millones, son la excepción.
+[/list]
+
+[center][img]URL_IMAGEN_4[/img][/center]
+[color=#999999][size=85][i]>> IMAGEN 4 (borrar esta línea): captura del histograma "¿Cuánto cuesta una SH?" de ESTAFA, con la campana de colores (verde, azul, naranja, rojo) y la franja de categorías debajo.[/i][/size][/color]
+
+[b]Conclusión:[/b] no hace falta ser un monstruo de daño para ganar SH. [b]Con 30.000–40.000 de daño bien colocados, en la ronda adecuada, una SH está al alcance de casi cualquier piloto.[/b]
+
+[center][color=#A9D3EA]━━━━━━━━━━━━━━━━━━━━━━━━[/color][/center]
+
+[size=150][b]🌱 Donde está el potencial: los pilotos con pocas SH[/b][/size]
+
+Los grandes pilotos ya rinden al máximo. Donde eEspaña puede crecer es en [b]la mitad de pilotos que hoy gana muy pocas medallas[/b].
+
+Hagamos cuentas:
+[list]
+[*]Son unos [b]60 pilotos[/b] por semana con menos de 3 SH de media
+[*]Si cada uno consiguiera solo [b]5 SH más por semana[/b]...
+[*]...serían [b]300 SH más[/b], es decir, [b][color=#3F8A20]3.000 de oro extra cada semana[/color][/b]
+[*]¡Un [b]+17 %[/b] para el farmeo español sin que los grandes hagan nada distinto! 🚀
+[/list]
+
+Y si sumamos a los pilotos que volaban en septiembre y han dejado de hacerlo (más de 30), el margen es aún mayor.
+
+[center][color=#A9D3EA]━━━━━━━━━━━━━━━━━━━━━━━━[/color][/center]
+
+[size=150][b]🏆 CONCURSO: ¡Despega del fondo![/b][/size]
+
+Para animar a los pilotos con menos SH, lanzamos un concurso:
+
+[b]🎯 Quién puede participar[/b]
+[list]
+[*]Los pilotos que en las [b]dos últimas semanas[/b] (semanas 6 y 7, del 6 al 19 de octubre) quedaron entre los que [b]menos SH ganaron[/b], es decir, en el tramo [b]P60–P100[/b] del ranking.
+[*]En la práctica, quien sacó [b]6 SH o menos[/b] entre las dos semanas. Son [b]55 pilotos[/b].
+[*]También cuentan los pilotos que han ganado SH antes pero [b]no ganaron ninguna[/b] en esas dos semanas.
+[/list]
+
+[b]🚀 Qué hay que hacer[/b]
+[list]
+[*]Entrar en el [b]P0–P40[/b], es decir, en el [b]40 % de pilotos con más SH[/b] de la semana del concurso.
+[*]Como referencia, en las últimas semanas hacían falta unas [b]12–14 SH en una semana[/b] para entrar en el P40.
+[/list]
+
+[b]🎁 Premio[/b]
+[list]
+[*]🍞 [b]Panes Q1[/b], de una [b]donación privada[/b]
+[*]💵 Presupuesto: [i]por decidir[/i]
+[/list]
+
+[b]📅 Semana del concurso:[/b] [i]por decidir[/i]
+[color=#999999][size=85][i]>> Nota (borrar esta línea): rellenar la semana del concurso (de martes a lunes) y el presupuesto cuando estén decididos.[/i][/size][/color]
+
+[center][img]URL_IMAGEN_5[/img][/center]
+[color=#999999][size=85][i]>> IMAGEN 5 (borrar esta línea): imagen de cartel del concurso. Por ejemplo, un avión despegando con el texto "¡Despega del fondo! P60 → P40" y un montón de panes como premio.[/i][/size][/color]
+
+[center][color=#A9D3EA]━━━━━━━━━━━━━━━━━━━━━━━━[/color][/center]
+
+[center][size=130][b]Cada SH son 10 de oro para eEspaña. ¡A volar! ✈️🇪🇸[/b][/size]
+
+[i]Publicaremos ESTAFA cada martes con los datos de la semana. Si tienes dudas o sugerencias, déjalas en los comentarios.[/i][/center]

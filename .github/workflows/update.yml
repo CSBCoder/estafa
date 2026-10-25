@@ -1,0 +1,53 @@
+name: Actualizar ESTAFA
+
+on:
+  schedule:
+    - cron: "23 9 * * *"     # una vez al día, a las 9:23 UTC (2:23 hora del servidor de eRepublik)
+  workflow_dispatch: {}       # botón "Run workflow" para lanzarlo a mano
+  push:
+    branches: [main]
+    paths: ["site/**", "scripts/**", "data/**"]
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: estafa
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: pip install -r requirements.txt
+      - name: Descargar SH de España
+        if: github.event_name != 'push'
+        run: python scripts/fetch_sh.py
+      - name: Descargar BH y CH semanales
+        if: github.event_name != 'push'
+        continue-on-error: true   # si falla, se publica igual con las SH
+        run: python scripts/fetch_players.py
+      - name: Unir al histórico y generar datos
+        run: python scripts/build.py
+      - name: Guardar histórico si hay cambios
+        run: |
+          git config user.name "estafa-bot"
+          git config user.email "estafa-bot@users.noreply.github.com"
+          git add data site/data/sh.js   # data/raw está en .gitignore
+          git diff --cached --quiet || git commit -m "Datos actualizados $(date -u +'%Y-%m-%d %H:%M') UTC"
+          git push
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: site
+      - id: deploy
+        uses: actions/deploy-pages@v4

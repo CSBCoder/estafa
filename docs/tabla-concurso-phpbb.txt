@@ -1,0 +1,180 @@
+[size=130][b]📋 ¿Puedo participar en el concurso?[/b][/size]
+
+Busca tu nombre en la tabla. Están todos los pilotos con SH en las semanas 6 y 7 (del 6 al 19 de octubre), ordenados por SH ganadas, con su [b]percentil[/b] (P1 es el que más gana). Si en la columna [b]Fondo P60[/b] pone [color=#C8372D][b]SÍ[/b][/color], estás en el P60–P100 y [b]puedes participar[/b]. Al final de la lista aparecen también los pilotos que ganaron SH antes pero ninguna en estas dos semanas: también participan.
+
+[b]✈️ Ranking de SH · Semanas 6–7 (6–19 oct)[/b]
+[size=85]Percentil contado desde arriba sobre 136 pilotos con SH. Fondo = P60–P100 o sin SH.[/size]
+[code]   #  Piloto                        S6   S7   SH  Perc.  Fondo P60
+------------------------------------------------------------------
+   1  Gigaphis                      93  107  200     P1  no
+   2  Duke09                       109   90  199     P2  no
+   3  FAF Babieca                   83   75  158     P3  no
+   4  Wigol                         48   98  146     P3  no
+   5  ClayDark25                    55   56  111     P4  no
+   6  Bartolo Montador              46   52   98     P5  no
+   7  Varek Voss                    46   46   92     P6  no
+   8  Li Shaoran                    68   19   87     P6  no
+   9  enrijeje                      36   49   85     P7  no
+  10  Sir Cocodrile                 43   37   80     P8  no
+  11  Canciller Palpatine           33   46   79     P9  no
+  11  superpaco                     42   37   79     P9  no
+  13  Barriga Verde                 32   43   75    P10  no
+  14  ALUMINIO DAVID                37   34   71    P11  no
+  15  CalvoSotelo                   38   29   67    P12  no
+  16  Rosa Violet Carson            40   25   65    P12  no
+  17  Maxinoi II de Aviles          39   21   60    P13  no
+  18  5koo                          26   32   58    P14  no
+  19  Fucchero                      24   33   57    P14  no
+  20  T4d3o                         17   39   56    P15  no
+  21  MalpaCK                       29   25   54    P16  no
+  22  Mauos                         20   30   50    P17  no
+  23  Cronos85                      27   22   49    P17  no
+  23  piralis                       25   24   49    P17  no
+  25  Elthain                       28   19   47    P19  no
+  26  celamino                      24   19   43    P20  no
+  27  carlicos                      25   15   40    P20  no
+  27  SinuniS 5o3                   20   20   40    P20  no
+  29  gat0fIauta                    19   20   39    P22  no
+  29  lucarr                        13   26   39    P22  no
+  29  Mudelanian                    17   22   39    P22  no
+  32  Fbforce                       15   23   38    P24  no
+  32  thefound                      10   28   38    P24  no
+  34  poggo                          6   30   36    P25  no
+  35  Coronel Fedecker              16   19   35    P26  no
+  35  tharmjk                       20   15   35    P26  no
+  37  RociitaJmex                   24    8   32    P28  no
+  38  SIR BREHOGAN                  15   16   31    P28  no
+  39  DeKaDrek                      14   16   30    P29  no
+  39  moas                          15   15   30    P29  no
+  41  Ignatius Cas                  12   17   29    P31  no
+  42  Alwairson                      7   21   28    P31  no
+  42  PLR CTM                       12   16   28    P31  no
+  44  MrXavi                        12   15   27    P33  no
+  45  Pokerman3o                    10   16   26    P34  no
+  46  Bucaner                       14   10   24    P34  no
+  46  Divo The Sinner               17    7   24    P34  no
+  46  Mario eCommie                 11   13   24    P34  no
+  49  Masf                           5   18   23    P37  no
+  49  Salduie                        9   14   23    P37  no
+  51  Napoleon Empotraparte IV       9   13   22    P38  no
+  52  Camdrecot de Sagallum          4   17   21    P39  no
+  52  Ddraig Goch                    2   19   21    P39  no
+  52  eSmorena                      10   11   21    P39  no
+  52  FAF Raheem                    13    8   21    P39  no
+  52  fegom                         12    9   21    P39  no
+  52  PachiG                         7   14   21    P39  no
+  58  Al Morrana                    14    5   19    P43  no
+  58  V E N 0 M                     13    6   19    P43  no
+  60  PatatoBravo                   10    8   18    P45  no
+  61  Chechoo                        5   12   17    P45  no
+  62  Abel Saint Ange                8    8   16    P46  no
+  62  NohTrim                       11    5   16    P46  no
+  64  artillerohonorario             7    8   15    P48  no
+  64  MinaRipli                      8    7   15    P48  no
+  66  NueveOcho Living Skeleton      6    7   13    P49  no
+  67  cabronson                      7    4   11    P50  no
+  67  Daniel_O                       5    6   11    P50  no
+  67  el cansino                     5    6   11    P50  no
+  70  Aragoa                        10    0   10    P52  no
+  70  Etele                          7    3   10    P52  no
+  70  iceman zgz                     7    3   10    P52  no
+  70  Thrawn666                      6    4   10    P52  no
+  70  Warmkunin3572                  5    5   10    P52  no
+  75  Trancalgesio                   4    5    9    P56  no
+  75  Valky Vala                     1    8    9    P56  no
+  77  Caranchoa                      7    0    7    P57  no
+  77  Eddibboaqu                     0    7    7    P57  no
+  77  Marko miramar                  4    3    7    P57  no
+  77  mollock                        4    3    7    P57  no
+  77  TEO CUBANO                     2    5    7    P57  no
+  82  Bleeding                       4    2    6    P61  SÍ
+  82  Cancerberus7                   3    3    6    P61  SÍ
+  82  el pertur                      1    5    6    P61  SÍ
+  82  Mithgil                        2    4    6    P61  SÍ
+  86  JackRyan                       3    2    5    P64  SÍ
+  86  Nehs                           2    3    5    P64  SÍ
+  88  Flecher                        0    4    4    P65  SÍ
+  88  Meditation Mode                1    3    4    P65  SÍ
+  88  Nerea Hellfire                 2    2    4    P65  SÍ
+  91  A R K E L                      0    3    3    P67  SÍ
+  91  AL Toni                        0    3    3    P67  SÍ
+  91  allbertogc                     1    2    3    P67  SÍ
+  91  arteida                        3    0    3    P67  SÍ
+  91  Evvyt4                         2    1    3    P67  SÍ
+  91  leodiante                      2    1    3    P67  SÍ
+  91  m60a3tts                       2    1    3    P67  SÍ
+  91  Oddx                           0    3    3    P67  SÍ
+  91  SALZEDA                        2    1    3    P67  SÍ
+  91  Sergy1972                      2    1    3    P67  SÍ
+  91  Spain Power                    0    3    3    P67  SÍ
+  91  toberro                        1    2    3    P67  SÍ
+  91  Zack Fitz                      3    0    3    P67  SÍ
+  91  zetchan                        2    1    3    P67  SÍ
+ 105  AustralKiller                  1    1    2    P78  SÍ
+ 105  balulo                         1    1    2    P78  SÍ
+ 105  CLFBH                          1    1    2    P78  SÍ
+ 105  ediporey                       2    0    2    P78  SÍ
+ 105  FRANGS48                       2    0    2    P78  SÍ
+ 105  Oscar Carazo                   0    2    2    P78  SÍ
+ 105  Patateros                      1    1    2    P78  SÍ
+ 105  Paulo.Freire                   1    1    2    P78  SÍ
+ 105  PineapleDragon                 1    1    2    P78  SÍ
+ 105  Retac 21                       2    0    2    P78  SÍ
+ 105  Tardivas                       2    0    2    P78  SÍ
+ 105  tolosa1975                     2    0    2    P78  SÍ
+ 105  Tomas Gravesen                 1    1    2    P78  SÍ
+ 118  Abrazafarolas                  0    1    1    P87  SÍ
+ 118  AnibalDA                       1    0    1    P87  SÍ
+ 118  Barret50                       0    1    1    P87  SÍ
+ 118  Chuchi I                       0    1    1    P87  SÍ
+ 118  Hans Kone                      1    0    1    P87  SÍ
+ 118  Imakaze                        0    1    1    P87  SÍ
+ 118  l3vant1n                       0    1    1    P87  SÍ
+ 118  nikembo                        0    1    1    P87  SÍ
+ 118  pedro joaquin                  1    0    1    P87  SÍ
+ 118  Piruleta Negra                 1    0    1    P87  SÍ
+ 118  Portugallaecia                 1    0    1    P87  SÍ
+ 118  rcuende                        0    1    1    P87  SÍ
+ 118  S. River                       0    1    1    P87  SÍ
+ 118  Somriure                       0    1    1    P87  SÍ
+ 118  Sr. Morales                    0    1    1    P87  SÍ
+ 118  t139617                        0    1    1    P87  SÍ
+ 118  Vasco Wormrider                1    0    1    P87  SÍ
+ 118  Victor Reguant                 0    1    1    P87  SÍ
+ 118  zheroc                         1    0    1    P87  SÍ
+   -  Akim emoji de estrellita       0    0    0      -  SÍ
+   -  angeldav                       0    0    0      -  SÍ
+   -  Astrovago                      0    0    0      -  SÍ
+   -  astu30                         0    0    0      -  SÍ
+   -  Cierzo85                       0    0    0      -  SÍ
+   -  cosifi                         0    0    0      -  SÍ
+   -  Draven Targaryen               0    0    0      -  SÍ
+   -  elEco                          0    0    0      -  SÍ
+   -  Fausto Alcron                  0    0    0      -  SÍ
+   -  galizalivre                    0    0    0      -  SÍ
+   -  GanosLal                       0    0    0      -  SÍ
+   -  gofii                          0    0    0      -  SÍ
+   -  Homedeneu                      0    0    0      -  SÍ
+   -  Iruyam                         0    0    0      -  SÍ
+   -  iVicentico                     0    0    0      -  SÍ
+   -  jesusquejambo                  0    0    0      -  SÍ
+   -  Jolly Roger.                   0    0    0      -  SÍ
+   -  just Djox                      0    0    0      -  SÍ
+   -  Malabar                        0    0    0      -  SÍ
+   -  Me109ZiTo                      0    0    0      -  SÍ
+   -  Muyuyu                         0    0    0      -  SÍ
+   -  NerdStark                      0    0    0      -  SÍ
+   -  pamplinasami                   0    0    0      -  SÍ
+   -  RQuaza                         0    0    0      -  SÍ
+   -  Sageth                         0    0    0      -  SÍ
+   -  sash4everr                     0    0    0      -  SÍ
+   -  Sergio Salvage                 0    0    0      -  SÍ
+   -  Sergio619                      0    0    0      -  SÍ
+   -  Slack-Ed                       0    0    0      -  SÍ
+   -  Solon.equitas                  0    0    0      -  SÍ
+   -  SpainEmpire                    0    0    0      -  SÍ
+   -  Victor Rodriguez Balseiro      0    0    0      -  SÍ
+   -  Vortices                       0    0    0      -  SÍ
+   -  yurkatravian                   0    0    0      -  SÍ
+   -  zapatilla                      0    0    0      -  SÍ
+   -  Zocapi                         0    0    0      -  SÍ[/code]

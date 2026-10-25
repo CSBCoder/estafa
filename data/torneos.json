@@ -1,0 +1,40 @@
+{
+  "_ayuda": "Configuración del concurso. Después de cambiar algo, ejecuta python scripts/build.py (en GitHub se hace solo). Las fechas son días del servidor de eRepublik y 'inicio' tiene que ser un martes. Cada torneo es un bloque de dos semanas que se compara con las dos semanas anteriores.",
+  "nombre": "¡Despega del fondo!",
+  "inicio": "2026-10-20",
+  "duracion_dias": 14,
+  "num_torneos": 2,
+  "fondo_percentil": 60,
+  "moneda": "cc",
+
+  "_ayuda_escalones": "Premio por cada escalón que se sube, del nivel de las dos semanas anteriores al del torneo. Se suman. Orden: sin SH -> P80-P100, P80-P100 -> P60-P80, P60-P80 -> P40-P60, P40-P60 -> P20-P40, P20-P40 -> P0-P20.",
+  "premios_escalon": [6000, 16000, 30000, 60000, 0],
+
+  "_ayuda_minimos": "Regla anti-chollo: para cobrar hay que tener al menos min_sh SH en el bloque y mejora_minima SH más que en el bloque anterior. Si solo se cobra la reactivación, basta con min_sh_reactivacion.",
+  "min_sh": 3,
+  "mejora_minima": 2,
+  "min_sh_reactivacion": 1,
+
+  "_ayuda_factor": "Factor nacional = 1 + amplificacion x variación de España frente a la referencia, entre minimo y maximo. Si usar_oro es true, la variación es la media de la de SH y la del oro total (BH + SH).",
+  "factor": {
+    "referencia_desde": "2026-10-06",
+    "referencia_hasta": "2026-10-19",
+    "amplificacion": 3,
+    "minimo": 0.5,
+    "maximo": 2,
+    "usar_oro": true
+  },
+
+  "_ayuda_presupuesto": "Si los premios de un bloque (ya con el factor) pasan del tope, se reducen todos en la misma proporción. Lo que sobre del presupuesto va al bote final.",
+  "presupuesto_total": 1200000,
+  "tope_bloque": 600000,
+  "bote_final": "Para el piloto del fondo de las semanas 6–7 que más SH sume en todo el concurso.",
+
+  "torneos": {
+    "_ayuda": "Opcional: datos de un torneo concreto, por su número. 'inscritos' es una lista de Citizen ID; si está vacía o no existe, compiten todos los pilotos que cumplen los requisitos.",
+    "1": {
+      "nota": "Primer bloque: el nivel de salida sale de las semanas 6 y 7 (6–19 oct).",
+      "inscritos": []
+    }
+  }
+}

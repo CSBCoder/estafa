@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>ESTAFA</title>
+<meta name="description" content="ESTAFA · Estadísticas del Frente Aéreo: farmeo de Sky Hero en eEspaña (eRepublik)">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Russo+One&family=Orbitron:wght@600;800&display=swap">
+<link rel="stylesheet" href="css/estafa.css">
+</head>
+<body>
+<div class="wrap">
+<div class="infobar"><span><i class="flag"></i>Spain</span><span id="ib-days"></span><span id="ib-dates"></span><span>Hora del servidor de eRepublik</span><span id="ib-upd"></span></div>
+
+<nav aria-label="Pestañas">
+  <a href="#torneo" data-tab="torneo">Torneo</a><a href="#estadisticas" data-tab="estadisticas">Estadísticas globales</a><a href="#pilotos" data-tab="pilotos">Pilotos (histórico)</a>
+</nav>
+
+<div class="banner" role="banner">
+  <div class="reward"><div class="coin">G</div><div>Oro generado<b id="bgold"></b></div></div>
+  <div><h1>ESTAFA</h1><p>Estadísticas del Frente Aéreo</p></div>
+  <div class="lcd"><b id="blcd"></b><span>DÍAS · SH · PILOTOS</span></div>
+  <div class="progress"><div class="lbl" id="bproglbl">Objetivo semanal<b id="bprog"></b></div><div class="track"><div id="bbar"></div></div></div>
+</div>
+
+<div class="tabpanel" id="tab-torneo" data-tab="torneo">
+<section aria-labelledby="s0" id="torneo"><div class="hd"><h2 id="s0">Concurso ¡Despega del fondo!</h2><span class="eyebrow" id="tnote"></span></div><div class="bd">
+  <div class="wbtns" id="tsel" role="group" aria-label="Elegir bloque"></div>
+  <div id="thead"></div>
+  <div id="tfactor"></div>
+  <div class="kpis" id="tkpis"></div>
+  <div id="tnotes"></div>
+  <div class="tfind" id="tfind"><label for="tq">¿Cómo va tu piloto?</label>
+    <input id="tq" type="search" list="tlist" placeholder="Escribe tu nombre en eRepublik…" autocomplete="off"><datalist id="tlist"></datalist>
+    <div id="tcard"></div></div>
+  <h3 style="margin-top:16px">Escalones y premios</h3>
+  <p class="lede" style="font-size:13px;margin-bottom:6px">Se cobra cada escalón que se sube desde el nivel de salida, y se suman. "SH para llegar" es lo que tiene hoy el último piloto que entra en ese nivel.</p>
+  <div class="tablewrap" id="tsteps"></div>
+  <h3 style="margin-top:16px">Clasificación</h3>
+  <div class="controls" id="tchips" style="margin-top:6px">
+    <button class="chip" data-f="all" aria-pressed="true">Todos</button><button class="chip" data-f="in" aria-pressed="false">Con premio</button><button class="chip" data-f="out" aria-pressed="false">Sin premio</button><button class="chip" data-f="zero" aria-pressed="false">Sin SH aún</button></div>
+  <div class="tablewrap"><table id="ttable"><thead id="thead2"></thead><tbody id="tbody"></tbody></table></div>
+  <button class="more" id="tmore">Ver todos</button>
+  <p class="lede" style="font-size:12.5px;margin-top:8px">Pulsa un nombre para ver su ficha. Un 0* es un piloto que ha subido pero aún no cumple la regla anti-chollo.</p>
+  <div class="grid2" style="margin-top:12px">
+    <div style="min-width:0"><h3>Normas</h3><div class="note trules" id="trules" style="margin-top:6px"></div></div>
+    <div style="min-width:0"><h3>Palmarés y presupuesto</h3><div class="tablewrap" id="tpalm" style="margin-top:6px"></div><div id="twin" style="margin-top:8px;font-size:13.5px"></div></div>
+  </div>
+</div></section>
+</div>
+
+<div class="tabpanel" id="estadisticas" data-tab="estadisticas" hidden>
+<div class="subnav" aria-label="Secciones"><a href="#resumen">Resumen</a><a href="#semanas">Semanas</a><a href="#diario">Día / hora</a><a href="#rangos">Percentiles</a><a href="#coste">Coste SH</a><a href="#ranking">Ranking</a><a href="#extranjero">Extranjero</a></div>
+
+
+<div class="weekbar" role="group" aria-label="Periodo del parte"><span class="wl">Parte de la semana</span><div id="weeks" class="wbtns"></div></div>
+
+<section id="resumen" aria-labelledby="s1"><div class="hd"><h2 id="s1">Estado de la flota</h2><span class="eyebrow" id="kpinote">1 SH = 10 oro</span></div>
+  <div class="bd"><div class="kpis" id="kpis"></div></div></section>
+
+<section id="semanas" aria-labelledby="s12"><div class="hd"><h2 id="s12">Semana a semana</h2><span class="eyebrow">semanas de martes a lunes · todo el registro</span></div><div class="bd">
+  <p class="lede" id="wklede"></p>
+  <div class="chartbox"><svg id="wkchart" viewBox="0 0 640 260" width="100%" role="img" aria-label="SH por semana"></svg></div>
+  <div class="tablewrap" id="wktable" style="margin-top:14px"></div>
+  <h3 style="margin-top:18px" id="movtitle"></h3>
+  <div class="movers" id="movers"></div>
+</div></section>
+
+<section id="diario" aria-labelledby="s8"><div class="hd"><h2 id="s8">Medallas en el tiempo</h2>
+  <div class="seg" role="group" aria-label="Vista"><button type="button" id="vday" aria-pressed="true">Por día</button><button type="button" id="vhour" aria-pressed="false">Por hora</button></div></div><div class="bd">
+ <div id="dayview">
+  <p class="lede">SH ganadas cada día de eRepublik del periodo elegido, separando las batallas en las que participa España de las guerras ajenas. Los días con raya son incompletos: el registro empieza y acaba a mitad de día.</p>
+  <div class="legend"><span><i style="background:var(--gold)"></i>Batallas de España</span><span><i style="background:var(--steel)"></i>Extranjero</span></div>
+  <div class="chartbox"><svg id="daily" viewBox="0 0 640 280" width="100%" role="img" aria-label="Medallas SH por día"></svg></div>
+  <div class="grid2" style="margin-top:14px">
+    <div style="min-width:0"><h3>Media por día de la semana</h3><p class="lede" style="font-size:13px">Todo el registro, solo días completos. Cada barra promedia 4 o 5 días.</p>
+      <div class="chartbox"><svg id="weekday" viewBox="0 0 400 230" width="100%" role="img" aria-label="Media de medallas por día de la semana"></svg></div></div>
+    <div style="min-width:0" id="rhythmnote"></div>
+  </div>
+ </div>
+ <div id="hourview" hidden>
+  <p class="lede">Coste de la SH típica (daño mediano) según la hora, en <strong>hora de Madrid</strong>. Cuanto más baja y más verde la barra, más barata sale la medalla. El número de encima es cuántas SH hay detrás de cada hora.</p>
+  <div class="chartbox"><svg id="hourly" viewBox="0 0 640 290" width="100%" role="img" aria-label="Coste mediano de la SH por hora"></svg></div>
+  <div class="grid2" style="margin-top:14px">
+    <div style="min-width:0" id="hournote"></div>
+    <div style="min-width:0"><div class="note" style="margin-top:0"><strong>Cómo se calcula la hora:</strong> el export solo trae la hora de inicio de cada batalla, no la de cada ronda. Por eso aquí solo cuentan las SH de las <strong>rondas 1 y 2</strong>, que se juegan en las primeras horas tras el inicio. Es una aproximación: la hora real puede ir una o dos horas más tarde. En una sola semana hay pocas SH por hora, así que mira mejor el periodo completo.</div></div>
+  </div>
+ </div>
+</div></section>
+
+<section id="rangos" aria-labelledby="s3"><div class="hd"><h2 id="s3">Reparto del oro por percentiles</h2><span class="eyebrow">pilotos ordenados por SH</span></div><div class="bd">
+  <p class="lede">Se ordenan los pilotos por SH ganadas en el periodo elegido y se agrupan por percentiles: el 5 % que más gana, del 5 al 10 %, del 10 al 25 %, del 25 al 50 % y la mitad inferior. Los pilotos empatados van al grupo mejor.</p>
+  <div class="legend"><span><i style="background:var(--steel);opacity:.55"></i>% de pilotos</span><span><i style="background:var(--gold)"></i>% del oro</span></div>
+  <div class="tiers" id="tiers"></div>
+  <div class="tablewrap" id="tiertable" style="margin-top:16px"></div>
+  <div class="note" id="tiernote"></div>
+  <div class="grid2" style="margin-top:16px">
+    <div style="min-width:0"><h3>Curva de acumulación</h3><p class="lede" style="font-size:13px">% del oro que suman los N primeros pilotos.</p>
+      <div class="chartbox"><svg id="curve" viewBox="0 0 400 300" width="100%" role="img" aria-label="Curva de oro acumulado"></svg></div></div>
+    <div style="min-width:0"><h3>Daño por medalla en cada grupo</h3>
+      <div class="legend"><span><i style="background:var(--gold)"></i>Media</span><span><i style="background:var(--steel);opacity:.6"></i>Mediana</span></div>
+      <div class="chartbox"><svg id="dmg" viewBox="0 0 400 300" width="100%" role="img" aria-label="Daño medio y mediano por rango"></svg></div></div>
+  </div>
+  <h3 style="margin-top:16px">Top 20 de pilotos</h3>
+  <div class="bars" id="bars" style="margin-top:8px"></div>
+</div></section>
+
+<section id="coste" aria-labelledby="s10"><div class="hd"><h2 id="s10">¿Cuánto cuesta una SH?</h2><span class="eyebrow">daño con el que se ganó cada medalla</span></div><div class="bd">
+  <p class="lede" id="costlede"></p>
+  <div class="chartbox"><svg id="hist" viewBox="0 0 660 290" width="100%" role="img" aria-label="Distribución del daño necesario para ganar una SH"></svg></div>
+  <div class="cat" id="catstrip"></div>
+  <div class="catlegend" id="catlegend"></div>
+  <div class="note" id="costnote"></div>
+</div></section>
+
+<section id="ranking" aria-labelledby="s11"><div class="hd"><h2 id="s11">Ranking de SH</h2><span class="eyebrow">medallas sueltas y pilotos</span></div><div class="bd">
+  <div class="grid2">
+    <div style="min-width:0"><h3>Las 10 SH más baratas</h3><div class="tablewrap rank-t" id="cheap"></div></div>
+    <div style="min-width:0"><h3>Las 10 SH más caras</h3><div class="tablewrap rank-t" id="dear"></div></div>
+  </div>
+  <div class="grid2" style="margin-top:16px">
+    <div style="min-width:0"><h3>Cazadores de gangas: SH por debajo de 10 k</h3><p class="lede" style="font-size:13px" id="lowlede"></p><div class="tablewrap rank-t" id="lowlist"></div><button class="more" id="lowmore">Ver todos</button></div>
+    <div style="min-width:0"><h3>Rondas de élite: SH por encima de 100 k</h3><p class="lede" style="font-size:13px" id="highlede"></p><div class="tablewrap rank-t" id="highlist"></div><button class="more" id="highmore">Ver todos</button></div>
+  </div>
+  <div class="grid2" style="margin-top:16px">
+    <div style="min-width:0"><h3>Pilotos que farmean más barato</h3><p class="lede" style="font-size:13px" id="effnote"></p><div class="tablewrap rank-t" id="effp"></div></div>
+    <div style="min-width:0"><h3>Pilotos de rondas caras</h3><p class="lede" style="font-size:13px" id="dearnote"></p><div class="tablewrap rank-t" id="dearp"></div></div>
+  </div>
+</div></section>
+
+<section id="extranjero" aria-labelledby="s9"><div class="hd"><h2 id="s9">Legión extranjera</h2><span class="eyebrow">guerras ajenas</span></div><div class="bd">
+  <p class="lede" id="legionlede"></p>
+  <div class="grid2">
+    <div style="min-width:0"><h3>Principales pilotos</h3><div class="tablewrap" id="legion"></div></div>
+    <div style="min-width:0"><h3>Por quién pelean</h3><p class="lede" style="font-size:13px">País del bando en el que ganaron la SH.</p>
+      <div class="chartbox"><svg id="countries" viewBox="0 0 400 250" width="100%" role="img" aria-label="Países a los que más ayudan los pilotos españoles"></svg></div></div>
+  </div>
+  <div class="note" id="legionnote"></div>
+</div></section>
+</div>
+
+<div class="tabpanel" id="pilotos" data-tab="pilotos" hidden>
+<section aria-labelledby="s6" id="registro"><div class="hd"><h2 id="s6">Registro de pilotos</h2><span class="eyebrow">elige una o varias semanas</span></div><div class="bd" id="reg">
+  <p class="lede">Esta tabla tiene su propio selector: marca las semanas que quieras sumar. El percentil se calcula sobre los pilotos con alguna SH en esas semanas, contando desde arriba (P1 es el que más SH gana). <strong>Fondo</strong> marca a los pilotos del P60 al P100 y a los que no ganaron ninguna SH. Las columnas <strong>BH</strong> (Battle Hero) y <strong>CH</strong> (Campaign Hero) vienen de la página de país de battle-stats, que corta los días de forma algo distinta.</p>
+  <div class="regweeks" role="group" aria-label="Semanas de la tabla"><span class="wl">Semanas:</span><div id="regweeks" class="wchecks"></div>
+    <div style="display:flex;gap:6px;flex-wrap:wrap"><button class="btn" id="rw2" type="button">Últimas 2</button><button class="btn" id="rwall" type="button">Todas</button></div></div>
+  <p class="regsum" id="regsum"></p>
+  <div class="controls">
+    <input id="q" type="search" placeholder="Buscar piloto…" aria-label="Buscar piloto">
+    <div id="chips" style="display:flex;flex-wrap:wrap;gap:6px">
+      <button class="chip" data-f="all" aria-pressed="true">Todos</button><button class="chip" data-f="fondo" aria-pressed="false">Fondo (P60–P100)</button><button class="chip" data-f="fuera" aria-pressed="false">Fuera del fondo</button></div>
+    <label class="tog"><input type="checkbox" id="zeros" checked> Incluir pilotos sin SH</label>
+  </div>
+  <div class="tablewrap"><table id="regtable"><thead id="reghead"></thead><tbody id="tb"></tbody></table></div>
+  <button class="more" id="more">Ver todos</button>
+  </div></section>
+<section id="pilsem" aria-labelledby="s13"><div class="hd"><h2 id="s13">SH de cada piloto por semana</h2><span class="eyebrow">todas las semanas completas</span></div><div class="bd">
+  <div class="controls"><input id="wq" type="search" placeholder="Buscar piloto…" aria-label="Buscar piloto en la tabla semanal"><div id="wsort" style="display:flex;flex-wrap:wrap;gap:6px">
+    <button class="chip" data-s="tot" aria-pressed="true">Más SH</button><button class="chip" data-s="up" aria-pressed="false">Más suben</button><button class="chip" data-s="down" aria-pressed="false">Más bajan</button></div></div>
+  <div class="tablewrap" id="wkpilots"></div>
+  <button class="more" id="wmore">Ver todos</button>
+</div></section>
+</div>
+
+<footer>ESTAFA · Estadísticas del Frente Aéreo · documento de rol para la comunidad de eEspaña · datos de <a href="https://battle-stats.yurii.live/" target="_blank" rel="noopener">battle-stats</a>, de driversti</footer>
+</div>
+<script src="data/sh.js"></script>
+<script src="js/estafa.js"></script>
+<script src="js/torneo.js"></script>
+<script src="js/tabs.js"></script>
+</body>
+</html>
