@@ -28,7 +28,7 @@ scripts/
 docs/                 Artículo de presentación y tabla del concurso en BBCode phpBB
 ```
 
-**Publicado** el 25 oct 2026: repositorio público https://github.com/CSBCoder/estafa, web https://csbcoder.github.io/estafa/ (Pages desde GitHub Actions). El robot sube datos cada día, así que antes de cambiar algo en local hay que hacer `git pull`. Los commits usan el correo noreply de GitHub (configurado solo en este repositorio) para no publicar el correo personal.
+**Publicado** el 25 oct 2026: repositorio público https://github.com/CSBCoder/estafa, web pública **https://estafa.netlify.app/** (Netlify conectado al repositorio, publica `site/` según netlify.toml y se redespliega con cada commit del robot). GitHub Pages (https://csbcoder.github.io/estafa/) sigue activo por el paso de deploy del workflow; Josemi prefiere Netlify para que no se vea su usuario de GitHub en la dirección. El robot sube datos cada día, así que antes de cambiar algo en local hay que hacer `git pull`. Los commits usan el correo noreply de GitHub (configurado solo en este repositorio) para no publicar el correo personal.
 
 Para probar en local: `pip install -r requirements.txt`, `python scripts/build.py` y abrir `site/index.html` en el navegador (funciona con file://).
 

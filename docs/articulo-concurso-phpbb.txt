@@ -8,7 +8,7 @@
 
 Si estás entre los pilotos que [b]menos SH ganan[/b], te pagamos por [b]subir puestos[/b]. Y si toda España farmea más, [b]todos los premios suben[/b].
 
-[size=130][b]👉 Mira cómo vas: [url=https://csbcoder.github.io/estafa/#torneo]csbcoder.github.io/estafa[/url][/b][/size]
+[size=130][b]👉 Mira cómo vas: [url=https://estafa.netlify.app/#torneo]estafa.netlify.app[/url][/b][/size]
 Escribe tu nombre en "¿Cómo va tu piloto?" y verás tu nivel, tu premio y cuántas SH te faltan. Se actualiza [b]cada día[/b].
 
 [center][color=#A9D3EA]━━━━━━━━━━━━━━━━━━━━━━━━[/color][/center]
