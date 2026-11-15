@@ -47,15 +47,24 @@ Se configura en `data/torneos.json`, sin tocar código:
 
 | Campo | Qué es |
 |---|---|
-| `inicio`, `duracion_dias`, `num_torneos` | Primer martes, 14 días por bloque y número de bloques (2 = 4 semanas). |
+| `inicio`, `duracion_dias` | Primer martes y 14 días por bloque. Los bloques siguen uno tras otro sin fin. |
 | `fondo_percentil` | 60: compiten los del P60–P100 (y los que no ganaron SH) en las dos semanas anteriores a cada bloque. |
 | `premios_escalon` | Premio por escalón subido: sin SH → P80–P100, → P60–P80, → P40–P60, → P20–P40, → P0–P20. Ahora `[6000, 16000, 30000, 60000, 0]`. |
 | `min_sh`, `mejora_minima`, `min_sh_reactivacion` | Regla anti-chollo: 3 SH y 2 más que en el bloque anterior; la reactivación, con 1 SH. |
 | `factor` | Referencia (6–19 oct), ×3, mínimo 0,5, máximo 2 y `usar_oro` (media de la variación de SH y de oro total). |
-| `presupuesto_total`, `tope_bloque` | 1.200.000 y 600.000 cc. Si un bloque se pasa del tope, se recorta todo en proporción. Lo que sobra va al bote final. |
+| `tope_bloque` | 600.000 cc: lo máximo que se reparte por bloque de 2 semanas, ya con el factor. Si se pasa, todos los premios se recortan en la misma proporción. |
 | `torneos` | Opcional, por número de bloque: `nota` e `inscritos` (lista de Citizen ID; vacía = compiten todos los que cumplen). |
 
 En la web cada piloto busca su nombre y ve su nivel de salida, su nivel actual, el premio que cobraría si el bloque acabara hoy y cuántas SH le faltan para el siguiente escalón. La dirección cambia (por ejemplo `.../#torneo/1/1561071`), así que se puede pasar el enlace de una ficha por Discord o el foro.
+
+En la pestaña Torneo salen siempre como botones los dos últimos bloques empezados; el desplegable "Ver otro bloque" abre cualquier otro, incluido el próximo.
+
+## Contabilidad (privada)
+
+La carpeta `contabilidad/` lleva las cuentas del concurso: donaciones, premios pagados y premios devueltos. **No se publica en Netlify y no se sube a GitHub** (está en `.gitignore`), así que solo existe en este ordenador: haz copia de seguridad de vez en cuando.
+
+- Para verla: abre `contabilidad/index.html` con doble clic.
+- Para anotar algo: abre `contabilidad/movimientos.js` con el Bloc de notas, copia una línea parecida, cambia los datos y guarda. Las instrucciones están al principio del archivo.
 
 ## Probar en tu ordenador
 

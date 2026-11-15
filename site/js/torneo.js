@@ -4,7 +4,7 @@
 (function(){
 const C=D.torneos,sec=document.getElementById('torneo');
 if(!C){document.getElementById('tab-torneo').remove();document.querySelector('nav a[data-tab="torneo"]').remove();return}
-const DUR=C.duracion_dias||14,FONDO=(C.fondo_percentil||60)/100,CC=C.moneda||'cc',NT=C.num_torneos||99;
+const DUR=C.duracion_dias||14,FONDO=(C.fondo_percentil||60)/100,CC=C.moneda||'cc';
 const PRZ=C.premios_escalon||[3000,8000,15000,60000,0],F=C.factor||{};
 const MIN=C.min_sh??3,MEJ=C.mejora_minima??2,MINR=C.min_sh_reactivacion??1,TOPE=C.tope_bloque||Infinity;
 const AMP=F.amplificacion??3,FMIN=F.minimo??.5,FMAX=F.maximo??2;
@@ -88,37 +88,31 @@ function make(n,s){
   const tg=Math.max(from,to)>=4?null:Math.max(from,to)+1,tc0=tg?cut(tc,tg):null;   // siguiente escalón con premio
   const goal=tc0==null?null:Math.max(tc0,tg===1?MINR:pz.need);
   rows.push({p,name,q,r,from,to,tot,prev,wk:W.map(w=>w.c.get(p)||0),...pz,tg,goal,falta:goal==null?null:Math.max(0,goal-tot),gain:tg?base(from,tg)-pz.b:0})});
- // Premios con factor y, si se pasa del tope, recorte proporcional
+ // Premios con el factor y, si se pasa del tope del bloque, recorte proporcional
  const f=FX?FX.f:1,tot0=rows.reduce((s,r)=>s+r.b*f,0),rec=tot0>TOPE?TOPE/tot0:1;
  rows.forEach(r=>r.pay=Math.round(r.b*f*rec));
  rows.sort((a,b)=>b.pay-a.pay||b.tot-a.tot||(a.q?a.q.v:0)-(b.q?b.q.v:0)||a.name.localeCompare(b.name));
  const done=st==='curso'?nd(s,LAST):st==='terminado'?DUR:0;
  return{n,s,e,q0,q1,X,st,qc,tc,W,rows,proj,FX,rec,paid:rows.reduce((s,r)=>s+r.pay,0),done};
 }
-// Todos los bloques ya empezados y el siguiente, hasta num_torneos
-const T=[];for(let n=1;n<=NT;n++){const s=addD(C.inicio,(n-1)*DUR);T.push(make(n,s));if(s>LAST)break}
-const ENDC=addD(C.inicio,NT*DUR-1);   // último día del concurso
-
-// Bote final: lo que sobre, para el piloto del fondo del primer bloque con más SH en todo el concurso
-function bote(){
- const spent=T.filter(t=>t.st!=='proximo').reduce((s,t)=>s+t.paid,0),left=(C.presupuesto_total||0)-spent;
- const c=count(C.inicio,ENDC),el=T[0].rows.map(r=>[r.p,c.get(r.p)||0]).sort((a,b)=>b[1]-a[1]);
- const lead=el.length&&el[0][1]?el.filter(x=>x[1]===el[0][1]):[];
- return{spent,left,lead,max:lead.length?lead[0][1]:0,closed:LAST>ENDC};
-}
+// Todos los bloques ya empezados y el siguiente: van uno tras otro sin fin
+const T=[];for(let n=1;n<1000;n++){const s=addD(C.inicio,(n-1)*DUR);T.push(make(n,s));if(s>LAST)break}
+// Botones para los dos últimos bloques empezados; el resto, en el desplegable
+const REC=(T.filter(t=>t.st!=='proximo').length?T.filter(t=>t.st!=='proximo'):T).slice(-2);
 
 const STL={curso:'En curso',terminado:'Terminado',proximo:'Próximo'};
 const ST={t:null,p:null,f:'all',all:false};
 const $=id=>document.getElementById(id);
-$('tsel').innerHTML=T.map(t=>`<button data-n="${t.n}" aria-pressed="false">Bloque ${t.n}<small>${rg(t.s,t.e)} · ${STL[t.st].toLowerCase()}</small></button>`).join('');
+$('tsel').innerHTML=REC.map(t=>`<button data-n="${t.n}" aria-pressed="false">Bloque ${t.n}<small>${rg(t.s,t.e)} · ${STL[t.st].toLowerCase()}</small></button>`).join('');
+$('tsel2').innerHTML=[...T].reverse().map(t=>`<option value="${t.n}">Bloque ${t.n} · ${rg(t.s,t.e)} · ${STL[t.st].toLowerCase()}</option>`).join('');
 $('tlist').innerHTML=D.names.map(n=>`<option value="${n.replace(/"/g,'&quot;')}">`).join('');
 
 function head(t){
  const left=nd(LAST,t.e)-1;
  const bar=t.st==='proximo'?`Empieza el martes ${dm(t.s)}: faltan ${nd(LAST,t.s)-1} días`:
   t.st==='curso'?`Día ${t.done} de ${DUR} · ${left>0?`quedan ${left} días`:'último día'}`:'Bloque cerrado';
- $('tnote').textContent=`${NT} bloques de ${DUR} días · ${rg(C.inicio,ENDC)}`;
- $('thead').innerHTML=`<div class="tstat"><span class="tbadge ${t.st}">${STL[t.st]}</span><b>Bloque ${t.n} de ${NT}</b><span>${rg(t.s,t.e)} · days ${es(erep(t.s))}–${es(erep(t.e))} · nivel de salida: ${rg(t.q0,t.q1)}</span>
+ $('tnote').textContent=`un bloque cada ${DUR} días desde el ${dm(C.inicio)}`;
+ $('thead').innerHTML=`<div class="tstat"><span class="tbadge ${t.st}">${STL[t.st]}</span><b>Bloque ${t.n}</b><span>${rg(t.s,t.e)} · days ${es(erep(t.s))}–${es(erep(t.e))} · nivel de salida: ${rg(t.q0,t.q1)}</span>
   <div class="tprog"><div class="track"><div style="width:${t.done/DUR*100}%"></div></div><span>${bar}</span></div></div>`;
  // Factor nacional
  const X=t.FX;
@@ -128,16 +122,16 @@ function head(t){
    <p>${X.proj?`Al ritmo de los días completos, España acabaría el bloque con <strong>≈ ${es(X.sh)} SH</strong>`:`España hizo <strong>${es(X.sh)} SH</strong> en el bloque`}, un <strong class="${X.vs>=0?'up':'down'}">${sg(X.vs)}</strong> frente a la referencia (${es(refSH)} SH, ${rg(R0,R1)}).
    ${X.vg!=null?`El oro total (BH + SH) ${X.proj?'va':'fue'} un <strong class="${X.vg>=0?'up':'down'}">${sg(X.vg)}</strong> (referencia ${es(refGold)}).`:''}</p>
    <p class="fml">Factor = 1 + ${AMP} × ${X.vg!=null?`media(${sg(X.vs)}, ${sg(X.vg)})`:sg(X.vs)} = ${es(X.raw,2)}${X.raw<FMIN||X.raw>FMAX?` → ${fx(X.f)} (el factor va de ${fx(FMIN)} a ${fx(FMAX)})`:''}. Todos los premios del bloque se multiplican por él: si España vuela más, todos cobran más.</p></div>`;
- const B=bote(),win=t.rows.filter(r=>r.pay>0),zero=t.rows.filter(r=>!r.q).length;
+ const win=t.rows.filter(r=>r.pay>0),zero=t.rows.filter(r=>!r.q).length;
  const K=t.st==='proximo'?[
   ['gold',t.rows.length,'Pilotos clasificados (provisional)',`${t.rows.length-zero} del fondo + ${zero} sin SH`],
   ['',rg(t.q0,t.q1),'Nivel de salida','todavía en juego: la lista puede cambiar hasta que se cierre'],
-  ['gold',money(B.left),'Presupuesto que queda',`de ${money(C.presupuesto_total||0)}`]
+  ['gold',money(Math.max(...PRZ)),'Premio estrella','P40–P60 → P20–P40, antes del factor']
  ]:[
   ['',t.rows.length,'Pilotos que compiten',`${t.rows.length-zero} del fondo + ${zero} sin SH en ${rg(t.q0,t.q1)}`],
   ['gold',win.length,t.st==='terminado'?'Premiados':'Premiados si acabara hoy',`${win.filter(r=>r.to>=4).length} saltos al P20–P40`],
-  ['gold',money(t.paid),t.st==='terminado'?'Premios del bloque':'Premios si acabara hoy',t.rec<1?`recortados al ${pct(t.rec,0)} por el tope de ${money(TOPE)}`:`tope por bloque: ${money(TOPE)}`],
-  ['',money(B.left),B.closed?'Bote final':'Quedaría para el bote',`de ${money(C.presupuesto_total||0)} de presupuesto`]
+  ['gold',money(t.paid),t.st==='terminado'?'Premios del bloque':'Premios si acabara hoy',`factor ${fx(t.FX.f)} · ${t.rec<1?`recortados al ${pct(t.rec,0)} por el tope de ${money(TOPE)}`:`tope del bloque: ${money(TOPE)}`}`],
+  ['',t.rows.filter(r=>r.to>r.from).length,t.st==='terminado'?'Subieron de nivel':'Han subido de nivel','cobren o no']
  ];
  $('tkpis').innerHTML=K.map(([c,v,l,s])=>`<div class="kpi ${c}"><span class="l">${l}</span><span class="v">${v}</span><span class="s">${s}</span></div>`).join('');
  $('tnotes').innerHTML=(t.X.nota?`<p class="lede" style="margin:10px 0 0">${t.X.nota}</p>`:'')+
@@ -164,8 +158,8 @@ function card(){
   <p>Si se mantiene, para cobrar en el bloque ${t.n} tendrá que subir de nivel con al menos ${row.need} SH.</p></div>`;return}
  const left=t.st==='curso'?Math.max(1,nd(LAST,t.e)-1):0,fin=t.st==='terminado';
  const big=row.pay?`${fin?'Premio':'Premio si acabara hoy'}: ${money(row.pay)}`:fin?'Sin premio':'Sin premio por ahora';
- const ladder=row.b?`${row.from===0&&row.b===PRZ[0]&&row.to>1?stepTxt(0):PRZ.map((v,i)=>i>=row.from&&i<row.to?`${stepTxt(i)} (${es(v)})`:null).filter(Boolean).join(' + ')} = ${money(row.b)} × ${es(t.FX.f,2)}${t.rec<1?` × ${pct(t.rec,0)} (recorte)`:''} = <strong>${money(row.pay)}</strong>`:'';
- const tp=row.tg?t.proj(row.tg):null,gtxt=row.gain>0?` (+${money(row.gain*t.FX.f)})`:'';
+ const ladder=row.b?`${row.from===0&&row.b===PRZ[0]&&row.to>1?stepTxt(0):PRZ.map((v,i)=>i>=row.from&&i<row.to?`${stepTxt(i)} (${es(v)})`:null).filter(Boolean).join(' + ')} = ${money(row.b)} × ${es(t.FX.f,2)}${t.rec<1?` × ${pct(t.rec,0)} (recorte por el tope)`:''} = <strong>${money(row.pay)}</strong>`:'';
+ const tp=row.tg?t.proj(row.tg):null,gtxt=row.gain>0?` (+${money(row.gain*t.FX.f*t.rec)})`:'';
  el.innerHTML=`<div class="tcard ${row.pay?'ok':'out'}"><div class="big">${big}</div><h3>${name}</h3>
   <p>Salida: <strong>${LV[row.from]}</strong> (${q?`${q.v} SH en ${rg(t.q0,t.q1)}, P${Math.ceil(q.f*100)}`:`ninguna SH en ${rg(t.q0,t.q1)}`}).<br>${fin?'Llegada':'Ahora'}: <strong>${LV[row.to]}</strong> con ${row.tot} SH en el bloque (${t.W.filter(w=>w.a<=LAST).map((w,i)=>`semana ${i+1}: ${row.wk[i]}`).join(', ')})${r?` · puesto ${r.r} de ${t.tc.N}`:''}.</p>
   ${ladder?`<p>${ladder}.</p>`:row.why?`<p>${row.why[0].toUpperCase()+row.why.slice(1)}.</p>`:''}
@@ -185,19 +179,17 @@ function table(){
   ${pr?`<td>${LV[x.from]}</td>`:x.wk.map(v=>`<td class="n">${v||'<span class="flat">·</span>'}</td>`).join('')+`<td class="n"><b>${x.tot}</b></td>
   <td><span class="lv l${x.to}">${LV[x.to]}</span>${x.to>x.from?' <span class="up">▲</span>':x.to<x.from?' <span class="down">▼</span>':''}</td>
   <td class="n">${x.pay?`<b class="gold">${es(x.pay)}</b>`:x.b===0&&x.to>x.from?'<span class="flat" title="'+x.why+'">0*</span>':'<span class="flat">—</span>'}</td>
-  ${t.st==='curso'?`<td>${x.goal==null?(x.tg?'—':'<span class="flat">premio máximo</span>'):`${LV[x.tg]}: ${x.falta?`faltan ${x.falta}`:'ya llega'} <span class="flat">(+${es(x.gain*t.FX.f)})</span>`}</td>`:''}`}</tr>`).join('')||
+  ${t.st==='curso'?`<td>${x.goal==null?(x.tg?'—':'<span class="flat">premio máximo</span>'):`${LV[x.tg]}: ${x.falta?`faltan ${x.falta}`:'ya llega'} <span class="flat">(+${es(Math.round(x.gain*t.FX.f*t.rec))})</span>`}</td>`:''}`}</tr>`).join('')||
   `<tr><td colspan="10" style="color:var(--muted)">Nadie en esta lista.</td></tr>`;
  const m=$('tmore');m.hidden=show.length>=r.length;m.textContent=`Ver los ${r.length} pilotos`;
 }
 
 function hall(){
- const B=bote();
  $('tpalm').innerHTML=`<table><thead><tr><th>Bloque</th><th>Fechas</th><th>Estado</th><th class="n">Compiten</th><th class="n">Premiados</th><th class="n">Factor</th><th class="n">Premios</th></tr></thead><tbody>`+
   T.map(t=>`<tr><td><b>${t.n}</b></td><td>${rg(t.s,t.e)}</td><td><span class="tbadge sm ${t.st}">${STL[t.st]}</span></td><td class="n">${t.rows.length}</td><td class="n">${t.st==='proximo'?'—':t.rows.filter(r=>r.pay).length}</td><td class="n">${t.FX&&!t.FX.none?fx(t.FX.f):'—'}</td><td class="n">${t.st==='proximo'?'—':money(t.paid)+(t.st==='curso'?' *':'')}</td></tr>`).join('')+
-  `</tbody><tfoot><tr><td colspan="6">${B.closed?'Bote final':'Quedaría para el bote final'}</td><td class="n">${money(B.left)}</td></tr></tfoot></table>`;
+  `</tbody></table>`;
  const fin=T.filter(t=>t.st==='terminado');
  $('twin').innerHTML=(T.some(t=>t.st==='curso')?'<p class="lede" style="margin:0 0 6px;font-size:12.5px">* Bloque en curso: importe si acabara hoy.</p>':'')+
-  `<p><strong>Bote final:</strong> ${C.bote_final||''} ${B.lead.length?`${B.closed?'Lo gana':'Ahora va en cabeza'} <strong>${B.lead.map(x=>D.names[x[0]]).join(', ')}</strong> con ${B.max} SH.`:''}</p>`+
   (fin.length?[...fin].reverse().map(t=>`<p><strong>Bloque ${t.n}</strong> (${rg(t.s,t.e)}, ${fx(t.FX.f)}): ${t.rows.filter(r=>r.pay).map(r=>`${r.name} ${es(r.pay)}`).join(', ')||'nadie cobró'}.</p>`).join(''):
   '<p class="lede" style="margin:0">Todavía no ha terminado ningún bloque. Aquí saldrán los premiados de cada uno.</p>');
 }
@@ -205,23 +197,25 @@ function hall(){
 function rules(){
  const ex=[[2,3],[2,4],[1,4],[0,4]].map(([a,b])=>`de ${LV[a]} a ${LV[b]}: ${money(base(a,b))}`).join('; ');
  $('trules').innerHTML=`<ul>
-  <li><strong>${NT} bloques de ${DUR} días</strong> (de martes a lunes, días del servidor de eRepublik), del ${dm(C.inicio)} al ${dm(ENDC)}.</li>
+  <li><strong>Un bloque nuevo cada ${DUR} días</strong> (de martes a lunes, días del servidor de eRepublik), desde el ${dm(C.inicio)}.</li>
   <li><strong>Quién compite:</strong> los pilotos del <strong>P${Math.round(FONDO*100)}–P100</strong> en las dos semanas anteriores a cada bloque y los que no ganaron ninguna SH. No hay que apuntarse.</li>
   <li><strong>Niveles:</strong> por percentil de SH entre todos los pilotos españoles con SH en esas dos semanas (P0 es el que más gana). Los empatados se quedan con el mejor puesto.</li>
   <li><strong>Premio por escalones:</strong> se cobra cada escalón que se sube del nivel de salida al de llegada, y se suman. El gran premio es llegar al <strong>P20–P40</strong>; llegar al P0–P20 no da nada extra. Ejemplos: ${ex}.</li>
   <li><strong>Factor nacional:</strong> todos los premios del bloque se multiplican por 1 + ${AMP} × la variación de España frente a ${rg(R0,R1)}${useGold?' (media de la variación de SH y la del oro total)':''}, entre ${fx(FMIN)} y ${fx(FMAX)}.</li>
   <li><strong>Anti-chollo:</strong> para cobrar hay que tener al menos ${MIN} SH en el bloque y ${MEJ} más que en las dos semanas anteriores. La reactivación se cobra con ${MINR} SH.</li>
-  <li><strong>Presupuesto:</strong> ${money(C.presupuesto_total||0)}, con un tope de ${money(TOPE)} por bloque; si se pasa, todos los premios se reducen en la misma proporción. Lo que sobre va al bote final.</li>
-  <li>Los datos se actualizan cada 3 días (mira la fecha arriba del todo). Cada SH cuenta en el día en que empezó su batalla.</li></ul>`;
+  ${TOPE<Infinity?`<li><strong>Tope:</strong> como mucho se reparten ${money(TOPE)} por bloque, ya con el factor. Si los premios lo superan, se reducen todos en la misma proporción.</li>
+  `:''}<li>Los datos se actualizan cada 3 días (mira la fecha arriba del todo). Cada SH cuenta en el día en que empezó su batalla.</li></ul>`;
 }
 
 function setHash(){try{history.replaceState(null,'','#torneo/'+ST.t.n+(ST.p!=null?'/'+D.ids[ST.p]:''))}catch(e){}}
 function pick(t,keepP){ST.t=t;ST.all=false;if(!keepP){ST.p=null;$('tq').value=''}
  document.querySelectorAll('#tsel button').forEach(b=>b.setAttribute('aria-pressed',+b.dataset.n===t.n));
+ $('tsel2').value=t.n;
  head(t);card();table()}
 function choose(p){ST.p=p;$('tq').value=p==null?'':D.names[p];card();setHash()}
 
 document.querySelectorAll('#tsel button').forEach(b=>b.addEventListener('click',()=>{pick(T[b.dataset.n-1],ST.p!=null);setHash()}));
+$('tsel2').addEventListener('change',e=>{pick(T[e.target.value-1],ST.p!=null);setHash()});
 $('tq').addEventListener('input',e=>{const v=e.target.value.trim().toLowerCase();if(!v){choose(null);return}
  const ex=D.names.findIndex(n=>n.toLowerCase()===v);if(ex>=0){choose(ex);return}
  const part=D.names.map((n,i)=>[n,i]).filter(([n])=>n.toLowerCase().includes(v));

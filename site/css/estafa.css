@@ -206,7 +206,10 @@ tr.zero td{color:var(--muted)}
 footer{font-size:12px;color:var(--muted);text-align:center}
 
 /* Torneo */
-#tsel{margin-bottom:12px}
+.tselrow{display:flex;flex-wrap:wrap;gap:8px 14px;align-items:center;margin-bottom:12px}
+.tpick{font-size:13px;font-weight:bold;color:var(--navy);display:flex;align-items:center;gap:6px}
+.tpick select{background:#fff;border:1px solid var(--feedline);border-radius:3px;color:var(--link);font:inherit;font-size:13px;font-weight:bold;padding:6px 8px;cursor:pointer;max-width:100%}
+.tpick select:focus-visible{outline:2px solid var(--navy);outline-offset:2px}
 .tstat{display:flex;flex-wrap:wrap;gap:6px 12px;align-items:center;margin-bottom:12px;font-size:13.5px}
 .tstat b{font-size:16px;color:var(--navy)}
 .tstat > span:not(.tbadge){color:var(--muted)}

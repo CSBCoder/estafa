@@ -1,9 +1,8 @@
 {
-  "_ayuda": "Configuración del concurso. Después de cambiar algo, ejecuta python scripts/build.py (en GitHub se hace solo). Las fechas son días del servidor de eRepublik y 'inicio' tiene que ser un martes. Cada torneo es un bloque de dos semanas que se compara con las dos semanas anteriores.",
+  "_ayuda": "Configuración del concurso. Después de cambiar algo, ejecuta python scripts/build.py (en GitHub se hace solo). Las fechas son días del servidor de eRepublik y 'inicio' tiene que ser un martes. Cada torneo es un bloque de dos semanas que se compara con las dos semanas anteriores. Los bloques siguen uno tras otro sin fin.",
   "nombre": "¡Despega del fondo!",
   "inicio": "2026-10-20",
   "duracion_dias": 14,
-  "num_torneos": 2,
   "fondo_percentil": 60,
   "moneda": "cc",
 
@@ -25,10 +24,8 @@
     "usar_oro": true
   },
 
-  "_ayuda_presupuesto": "Si los premios de un bloque (ya con el factor) pasan del tope, se reducen todos en la misma proporción. Lo que sobre del presupuesto va al bote final.",
-  "presupuesto_total": 1200000,
+  "_ayuda_tope": "Máximo que se reparte en un bloque de dos semanas, ya con el factor. Si los premios lo superan, se reducen todos en la misma proporción.",
   "tope_bloque": 600000,
-  "bote_final": "Para el piloto del fondo de las semanas 6–7 que más SH sume en todo el concurso.",
 
   "torneos": {
     "_ayuda": "Opcional: datos de un torneo concreto, por su número. 'inscritos' es una lista de Citizen ID; si está vacía o no existe, compiten todos los pilotos que cumplen los requisitos.",
