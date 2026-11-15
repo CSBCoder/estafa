@@ -1,0 +1,85 @@
+[center][size=200][b][color=#1B5A85]✈️ ESTAFA · PARTE DE NOVIEMBRE ✈️[/color][/b][/size]
+[size=120][b]¡Despega del fondo!: premios del bloque 1 y cómo va el bloque 2[/b][/size]
+[i]Datos de battle-stats hasta el 12 de noviembre[/i][/center]
+
+[center][color=#A9D3EA]━━━━━━━━━━━━━━━━━━━━━━━━[/color][/center]
+
+[size=150][b]🏆 Bloque 1 (20 oct – 2 nov): premios repartidos[/b][/size]
+
+El primer bloque del concurso ya está cerrado y pagado:
+[list]
+[*]👥 [b]41 pilotos premiados[/b]
+[*]💰 [b][color=#E0901A]599.989 cc repartidos[/color][/b]
+[*]🇪🇸 Factor nacional: [b]×0,91[/b] (España hizo un 5,4 % menos de SH que en las semanas 6–7)
+[*]✂️ Los premios sumaban 726.180 cc, así que se aplicó el [b]tope de 600.000 cc por bloque[/b] y se recortaron todos al 83 %
+[/list]
+
+[center][img]https://raw.githubusercontent.com/CSBCoder/estafa/main/docs/img/2026-11/estafa-bloque1-resumen.png[/img][/center]
+
+[b]Lo más destacado:[/b]
+[list]
+[*]⭐ [b]AL Toni[/b] y [b]Cancerberus7[/b] dieron el gran salto: del P60–P80 al [b]P20–P40[/b]. [b]67.669 cc[/b] cada uno.
+[*]🚀 [b]astu30[/b] pasó de no ganar ninguna SH a meterse en el P40–P60: [b]39.098 cc[/b].
+[*]🔁 [b]24 pilotos se reactivaron[/b]: volvieron a ganar SH después de dos semanas sin ninguna.
+[*]📈 Los pilotos del concurso pasaron de [b]133 SH[/b] a [b]229 SH[/b] en dos semanas: un [b][color=#3F8A20]+72 %[/color][/b].
+[/list]
+
+[center][img]https://raw.githubusercontent.com/CSBCoder/estafa/main/docs/img/2026-11/estafa-bloque1-premiados.png[/img][/center]
+
+[center][color=#A9D3EA]━━━━━━━━━━━━━━━━━━━━━━━━[/color][/center]
+
+[size=150][b]📊 Cómo vuela España: SH y BH[/b][/size]
+
+Comparando las semanas del concurso con las semanas 6 y 7 (antes de empezar):
+[list]
+[*]✈️ [b]SH:[/b] 1.668 por semana, un [color=#C8372D][b]−5,7 %[/b][/color]. El aire, a nivel de país, ha bajado un poco.
+[*]⚔️ [b]BH:[/b] 3.777 por semana, un [color=#3F8A20][b]+2,1 %[/b][/color]. La tierra aguanta e incluso sube: la semana del 27 de octubre dejó [b]4.284 BH[/b], la segunda mejor del registro.
+[*]🪙 [b]Oro total (BH + SH):[/b] 31.967 por semana, un [b]−1,9 %[/b].
+[/list]
+
+[center][img]https://raw.githubusercontent.com/CSBCoder/estafa/main/docs/img/2026-11/estafa-evolucion-sh-bh.png[/img][/center]
+
+[b]Lectura:[/b] el fondo está despegando (+72 % de SH en el bloque 1), pero el total de España baja algo, y eso hunde el factor nacional. [b]Si los pilotos de siempre mantienen su ritmo, los premios del concurso suben para todos.[/b]
+
+[center][color=#A9D3EA]━━━━━━━━━━━━━━━━━━━━━━━━[/color][/center]
+
+[size=150][b]⏱️ Bloque 2 (3–16 nov): cómo va[/b][/size]
+
+Quedan los últimos días: [b]el bloque cierra el lunes 16 de noviembre[/b].
+[list]
+[*]👥 Compiten [b]98 pilotos[/b]
+[*]🏅 Si acabara hoy, cobrarían [b]29 pilotos[/b]
+[*]⭐ [b]5 ya están en el P20–P40 o más arriba[/b]: Flecher, arteida, Ddraig Goch, Etele y Chuchi I
+[*]💰 Los premios ya llegan al [b]tope de 600.000 cc[/b] (se recortarían al 83 %)
+[*]🇪🇸 Factor previsto: [b][color=#C8372D]×0,81[/color][/b]. España va un 6,4 % por debajo en SH. [b]Todavía puede subir si volamos estos últimos días.[/b]
+[*]📈 Los pilotos del bloque ya llevan [b]250 SH[/b], frente a las 111 de las dos semanas anteriores: [b][color=#3F8A20]+125 %[/color][/b], y aún no ha acabado
+[/list]
+
+[center][img]https://raw.githubusercontent.com/CSBCoder/estafa/main/docs/img/2026-11/estafa-bloque2-estado.png[/img][/center]
+
+[b]¿Por dónde va cada uno?[/b] Estos son los 29 pilotos que cobrarían si el bloque acabara hoy, con lo que les falta para el siguiente escalón. [i]Las cifras cambian cada día hasta el cierre.[/i]
+
+[center][img]https://raw.githubusercontent.com/CSBCoder/estafa/main/docs/img/2026-11/estafa-bloque2-premiados-1.png[/img][/center]
+
+[center][img]https://raw.githubusercontent.com/CSBCoder/estafa/main/docs/img/2026-11/estafa-bloque2-premiados-2.png[/img][/center]
+
+[center][img]https://raw.githubusercontent.com/CSBCoder/estafa/main/docs/img/2026-11/estafa-bloque2-premiados-3.png[/img][/center]
+
+[b]Para los que van justos:[/b] se espera que al final hagan falta unas [b]9 SH para el P40–P60[/b] y unas [b]22 SH para el P20–P40[/b]. ¡Un último empujón!
+
+[center][color=#A9D3EA]━━━━━━━━━━━━━━━━━━━━━━━━[/color][/center]
+
+[size=150][b]🆕 El 25 de noviembre, nueva web[/b][/size]
+
+El [b]25 de noviembre[/b] estrenamos la nueva versión de ESTAFA, en la misma dirección: [url=https://estafa.netlify.app/]estafa.netlify.app[/url]
+[list]
+[*]🗓️ Los bloques siguen uno tras otro, cada dos semanas
+[*]🔽 Arriba, los dos últimos bloques. Con el desplegable podréis ver [b]cualquier bloque anterior[/b]
+[*]🔎 Cada piloto podrá buscar su nombre y ver su nivel, su premio y cuántas SH le faltan
+[/list]
+
+[center][color=#A9D3EA]━━━━━━━━━━━━━━━━━━━━━━━━[/color][/center]
+
+[center][size=130][b]Cada SH son 10 de oro para eEspaña. ¡Despega del fondo! ✈️🇪🇸[/b][/size]
+
+[i]Datos de [url=https://battle-stats.yurii.live/]battle-stats[/url], de driversti. Dudas y sugerencias, en los comentarios.[/i][/center]
