@@ -24,14 +24,18 @@
     "usar_oro": true
   },
 
-  "_ayuda_tope": "Máximo que se reparte en un bloque de dos semanas, ya con el factor. Si los premios lo superan, se reducen todos en la misma proporción.",
-  "tope_bloque": 600000,
+  "_ayuda_tope": "Máximo que se reparte en un bloque de dos semanas, ya con el factor. Si los premios lo superan, se reducen todos en la misma proporción. Un bloque puede tener su propio tope_bloque en 'torneos' (los bloques 1 y 2 se quedan con 600.000; desde el 3 se calcula con 400.000).",
+  "tope_bloque": 400000,
 
   "torneos": {
     "_ayuda": "Opcional: datos de un torneo concreto, por su número. 'inscritos' es una lista de Citizen ID; si está vacía o no existe, compiten todos los pilotos que cumplen los requisitos.",
     "1": {
       "nota": "Primer bloque: el nivel de salida sale de las semanas 6 y 7 (6–19 oct).",
-      "inscritos": []
+      "inscritos": [],
+      "tope_bloque": 600000
+    },
+    "2": {
+      "tope_bloque": 600000
     }
   }
 }

@@ -7,6 +7,8 @@ if(!C){document.getElementById('tab-torneo').remove();document.querySelector('na
 const DUR=C.duracion_dias||14,FONDO=(C.fondo_percentil||60)/100,CC=C.moneda||'cc';
 const PRZ=C.premios_escalon||[3000,8000,15000,60000,0],F=C.factor||{};
 const MIN=C.min_sh??3,MEJ=C.mejora_minima??2,MINR=C.min_sh_reactivacion??1,TOPE=C.tope_bloque||Infinity;
+// Tope de un bloque: el suyo propio en torneos.{n}.tope_bloque o, si no tiene, el general
+const topeDe=n=>((C.torneos||{})[n]||{}).tope_bloque||TOPE;
 const AMP=F.amplificacion??3,FMIN=F.minimo??.5,FMAX=F.maximo??2;
 const addD=(s,n)=>{const t=new Date(s+'T12:00:00Z');t.setUTCDate(t.getUTCDate()+n);return t.toISOString().slice(0,10)};
 const dt=s=>new Date(s+'T12:00:00');
@@ -89,11 +91,11 @@ function make(n,s){
   const goal=tc0==null?null:Math.max(tc0,tg===1?MINR:pz.need);
   rows.push({p,name,q,r,from,to,tot,prev,wk:W.map(w=>w.c.get(p)||0),...pz,tg,goal,falta:goal==null?null:Math.max(0,goal-tot),gain:tg?base(from,tg)-pz.b:0})});
  // Premios con el factor y, si se pasa del tope del bloque, recorte proporcional
- const f=FX?FX.f:1,tot0=rows.reduce((s,r)=>s+r.b*f,0),rec=tot0>TOPE?TOPE/tot0:1;
+ const tope=topeDe(n),f=FX?FX.f:1,tot0=rows.reduce((s,r)=>s+r.b*f,0),rec=tot0>tope?tope/tot0:1;
  rows.forEach(r=>r.pay=Math.round(r.b*f*rec));
  rows.sort((a,b)=>b.pay-a.pay||b.tot-a.tot||(a.q?a.q.v:0)-(b.q?b.q.v:0)||a.name.localeCompare(b.name));
  const done=st==='curso'?nd(s,LAST):st==='terminado'?DUR:0;
- return{n,s,e,q0,q1,X,st,qc,tc,W,rows,proj,FX,rec,paid:rows.reduce((s,r)=>s+r.pay,0),done};
+ return{n,s,e,q0,q1,X,st,tope,qc,tc,W,rows,proj,FX,rec,paid:rows.reduce((s,r)=>s+r.pay,0),done};
 }
 // Todos los bloques ya empezados y el siguiente: van uno tras otro sin fin
 const T=[];for(let n=1;n<1000;n++){const s=addD(C.inicio,(n-1)*DUR);T.push(make(n,s));if(s>LAST)break}
@@ -130,7 +132,7 @@ function head(t){
  ]:[
   ['',t.rows.length,'Pilotos que compiten',`${t.rows.length-zero} del fondo + ${zero} sin SH en ${rg(t.q0,t.q1)}`],
   ['gold',win.length,t.st==='terminado'?'Premiados':'Premiados si acabara hoy',`${win.filter(r=>r.to>=4).length} saltos al P20–P40`],
-  ['gold',money(t.paid),t.st==='terminado'?'Premios del bloque':'Premios si acabara hoy',`factor ${fx(t.FX.f)} · ${t.rec<1?`recortados al ${pct(t.rec,0)} por el tope de ${money(TOPE)}`:`tope del bloque: ${money(TOPE)}`}`],
+  ['gold',money(t.paid),t.st==='terminado'?'Premios del bloque':'Premios si acabara hoy',`factor ${fx(t.FX.f)} · ${t.rec<1?`recortados al ${pct(t.rec,0)} por el tope de ${money(t.tope)}`:`tope del bloque: ${money(t.tope)}`}`],
   ['',t.rows.filter(r=>r.to>r.from).length,t.st==='terminado'?'Subieron de nivel':'Han subido de nivel','cobren o no']
  ];
  $('tkpis').innerHTML=K.map(([c,v,l,s])=>`<div class="kpi ${c}"><span class="l">${l}</span><span class="v">${v}</span><span class="s">${s}</span></div>`).join('');
@@ -194,6 +196,9 @@ function hall(){
   '<p class="lede" style="margin:0">Todavía no ha terminado ningún bloque. Aquí saldrán los premiados de cada uno.</p>');
 }
 
+// Bloques con un tope distinto del general, agrupados: " (600.000 cc en los bloques 1 y 2)"
+function topes(){const g=new Map();T.forEach(t=>{if(t.tope!==TOPE){if(!g.has(t.tope))g.set(t.tope,[]);g.get(t.tope).push(t.n)}});
+ return g.size?' ('+[...g].map(([v,ns])=>`${money(v)} en ${ns.length>1?'los bloques '+ns.slice(0,-1).join(', ')+' y '+ns.at(-1):'el bloque '+ns[0]}`).join('; ')+')':''}
 function rules(){
  const ex=[[2,3],[2,4],[1,4],[0,4]].map(([a,b])=>`de ${LV[a]} a ${LV[b]}: ${money(base(a,b))}`).join('; ');
  $('trules').innerHTML=`<ul>
@@ -203,7 +208,7 @@ function rules(){
   <li><strong>Premio por escalones:</strong> se cobra cada escalón que se sube del nivel de salida al de llegada, y se suman. El gran premio es llegar al <strong>P20–P40</strong>; llegar al P0–P20 no da nada extra. Ejemplos: ${ex}.</li>
   <li><strong>Factor nacional:</strong> todos los premios del bloque se multiplican por 1 + ${AMP} × la variación de España frente a ${rg(R0,R1)}${useGold?' (media de la variación de SH y la del oro total)':''}, entre ${fx(FMIN)} y ${fx(FMAX)}.</li>
   <li><strong>Anti-chollo:</strong> para cobrar hay que tener al menos ${MIN} SH en el bloque y ${MEJ} más que en las dos semanas anteriores. La reactivación se cobra con ${MINR} SH.</li>
-  ${TOPE<Infinity?`<li><strong>Tope:</strong> como mucho se reparten ${money(TOPE)} por bloque, ya con el factor. Si los premios lo superan, se reducen todos en la misma proporción.</li>
+  ${TOPE<Infinity?`<li><strong>Tope:</strong> como mucho se reparten ${money(TOPE)} por bloque${topes()}, ya con el factor. Si los premios lo superan, se reducen todos en la misma proporción.</li>
   `:''}<li>Los datos se actualizan cada 3 días (mira la fecha arriba del todo). Cada SH cuenta en el día en que empezó su batalla.</li></ul>`;
 }
 

@@ -27,7 +27,7 @@ scripts/
 netlify.toml          Netlify publica solo site/, y solo si cambia algo dentro (ignore)
 .claude/launch.json   Servidor local (python -m http.server 8765) para la vista previa
 docs/                 Artículo de presentación y tabla del concurso en BBCode phpBB
-contabilidad/         PRIVADA (en .gitignore, fuera de site/): index.html + contabilidad.js + movimientos.js (la "base de datos")
+site/contabilidad/    Cuentas del concurso, PÚBLICAS desde el 25 nov 2026: index.html + contabilidad.js + movimientos.js (la "base de datos")
 ```
 
 **Publicado** el 25 oct 2026: repositorio público https://github.com/CSBCoder/estafa, web pública **https://estafa.netlify.app/** (Netlify conectado al repositorio, publica `site/` según netlify.toml y se redespliega con cada commit del robot). GitHub Pages está **apagado** (25 oct 2026) y el workflow ya no publica: solo descarga y guarda datos. Josemi prefiere Netlify para que no se vea su usuario de GitHub en la dirección. Desde el 25 oct 2026 el robot va cada 3 días (no diario) para ahorrar créditos de Netlify, que cobra cada publicación. El robot sube datos, así que antes de cambiar algo en local hay que hacer `git pull`. Los commits usan el correo noreply de GitHub (configurado solo en este repositorio) para no publicar el correo personal.
@@ -87,7 +87,7 @@ Normas acordadas con Josemi el 25 oct 2026:
 - **Premio por escalones** subidos del nivel de salida al de llegada, sumados: 6.000 (reactivarse), 16.000, 30.000, **60.000 (P40–P60 → P20–P40, el premio estrella)** y 0 (llegar al P0–P20 no da nada extra).
 - **Anti-chollo**: para cobrar, al menos 3 SH en el bloque y 2 más que en el bloque anterior (interpretación nuestra de "2 más que tu media anterior", en bloques de 2 semanas). La reactivación sola se cobra con 1 SH; si no cumple el resto, cobra solo la reactivación.
 - **Factor nacional** = 1 + 3 × variación de España frente a la referencia de las semanas 6–7 (3.538 SH, 65.203 de oro según la API), entre ×0,5 y ×2, redondeado a 2 decimales. Con `usar_oro`, la variación es la media de la de SH (CSV) y la del oro total BH+SH (API). En un bloque en curso se usa el ritmo de los días completos; el oro previsto = SH previstas × oro por SH de la API.
-- **Tope de 600.000 cc por bloque de 2 semanas** (`tope_bloque`), ya con el factor: si los premios lo superan, se recortan todos en la misma proporción. Josemi quiere mantenerlo (lo quité por error el 15 nov y se recuperó ese mismo día).
+- **Tope por bloque de 2 semanas** (`tope_bloque`), ya con el factor: si los premios lo superan, se recortan todos en la misma proporción. **Bloques 1 y 2: 600.000 cc; desde el bloque 3: 400.000 cc** (decidido el 25 nov 2026). El general está en `tope_bloque` y cada bloque puede tener el suyo en `torneos.{n}.tope_bloque`. Josemi quiere mantener el tope (lo quité por error el 15 nov y se recuperó ese mismo día).
 - **Sin presupuesto total ni bote final** en la web (quitados el 15 nov 2026). El dinero se lleva aparte en la contabilidad privada. Bloque 1: 726.180 sin tope → 599.989 cc pagados.
 - "SH para llegar" a un nivel = SH del último piloto que entra (posición floor(umbral·N)); "previsto al final" = el de los días completos × 14 / días completos.
 
@@ -105,12 +105,11 @@ Normas acordadas con Josemi el 25 oct 2026:
 - Concurso "¡Despega del fondo!": pueden participar los pilotos del P60–P100 en las semanas 6–7 (55 con 6 SH o menos, más 36 sin SH). Ganan si entran en el P0–P40 de la semana del concurso (hacían falta unas 12–14 SH/semana). Premio: panes Q1 de una donación privada. Presupuesto y semana del concurso, por decidir.
 - Artículo para el foro en docs/ (BBCode phpBB, imágenes como URL_IMAGEN_n con descripción).
 
-## Contabilidad privada (contabilidad/)
+## Contabilidad (site/contabilidad/)
 
-- Josemi la quiere **aparte y sin publicar**: no está enlazada desde la web, no está en `site/` (Netlify no la sirve) y está en `.gitignore` (no va al repositorio público). Solo existe en el ordenador de Josemi.
-- `movimientos.js` define `window.CONTA = {moneda, tope_bloque, movimientos: [{fecha, tipo, quien, torneo, concepto, importe, nota}]}`. Tipos: donacion (+), premios (−), devolucion (+), gasto (−). Importe siempre positivo. Fecha "AAAA-MM-DD" o "AAAA-MM".
-- La página reutiliza `../site/css/estafa.css` y se abre con doble clic (file://).
-- Datos a 15 nov 2026: donaciones de Divo 1.000.000, Calvosotelo 200.000 y gatoflauta 100.000 (oct 2026) y Calvosotelo 100.000 (14 nov); premios del bloque 1 599.989 (recalculado, pendiente de que Josemi confirme la cifra real); devueltos 101.246 por premios no aceptados. Saldo 901.257 cc; con el tope de 600.000 cubre 1,5 bloques (si el bloque 2 llega al tope quedan 301.257).
+- Hasta el 25 nov 2026 era privada y solo estaba en el ordenador de Josemi. Ese día Josemi pidió recrearla en GitHub y que fuera accesible: ahora está en `site/contabilidad/`, Netlify la publica en /contabilidad/. Josemi **no quiere ningún botón ni enlace** hacia ella desde la web: solo se entra con el enlace directo (y lleva `noindex` para que no salga en buscadores). El código sigue siendo visible en el repositorio público.
+- `movimientos.js` define `window.CONTA = {moneda, tope_bloque, movimientos: [{fecha, tipo, quien, torneo, concepto, importe, nota}]}`. Tipos: donacion (+), premios (−), devolucion (+), gasto (−). Importe siempre positivo. Fecha "AAAA-MM-DD" o "AAAA-MM". Se muestran en el orden del archivo.
+- Datos a 25 nov 2026: donaciones de Divo 1.000.000, Calvosotelo 200.000 y gatoflauta 100.000 (oct), Calvosotelo 100.000 (14 nov) y AL Toni 40.000 (nov, sin día). Premios: bloque 1 599.989 y bloque 2 599.999 (cifras de la web; el 2 está pendiente de repartir a 25 nov y puede haber devoluciones). Devueltos del bloque 1: 202.994 (total final). Saldo 443.006 cc: 1,1 bloques con el tope de 400.000.
 
 ## Pendiente / ideas
 
