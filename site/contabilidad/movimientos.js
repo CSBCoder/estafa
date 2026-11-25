@@ -12,7 +12,7 @@ window.CONTA = {
     {fecha: "2026-11-03", tipo: "premios",    quien: "",            torneo: 1,    concepto: "Premios del bloque 1 (20 oct – 2 nov)", importe: 599989, nota: "Cifra calculada por la web (tope de 600.000)"},
     {fecha: "2026-11",    tipo: "devolucion", quien: "",            torneo: 1,    concepto: "Premios del bloque 1 no aceptados", importe: 202994, nota: "Total devuelto al final"},
     {fecha: "2026-11-14", tipo: "donacion",   quien: "Calvosotelo", torneo: null, concepto: "Donación",         importe: 100000,  nota: ""},
-    {fecha: "2026-11-17", tipo: "premios",    quien: "",            torneo: 2,    concepto: "Premios del bloque 2 (3–16 nov)", importe: 599999, nota: "Cifra calculada por la web (tope de 600.000); pendiente de confirmar lo pagado"},
+    {fecha: "2026-11-17", tipo: "premios",    quien: "",            torneo: 2,    concepto: "Premios del bloque 2 (3–16 nov)", importe: 599999, nota: "Cifra de la web (tope de 600.000). Pendiente de repartir: si alguien no lo acepta, apuntar la devolución"},
     {fecha: "2026-11",    tipo: "donacion",   quien: "AL Toni",     torneo: null, concepto: "Donación",         importe: 40000,   nota: "Falta el día exacto"}
   ]
 };

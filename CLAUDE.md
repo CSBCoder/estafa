@@ -107,9 +107,9 @@ Normas acordadas con Josemi el 25 oct 2026:
 
 ## Contabilidad (site/contabilidad/)
 
-- Hasta el 25 nov 2026 era privada y solo estaba en el ordenador de Josemi. Ese día Josemi pidió recrearla en GitHub y que fuera accesible: ahora está en `site/contabilidad/`, Netlify la publica en /contabilidad/ y hay un enlace discreto en el pie de la web.
+- Hasta el 25 nov 2026 era privada y solo estaba en el ordenador de Josemi. Ese día Josemi pidió recrearla en GitHub y que fuera accesible: ahora está en `site/contabilidad/`, Netlify la publica en /contabilidad/. Josemi **no quiere ningún botón ni enlace** hacia ella desde la web: solo se entra con el enlace directo (y lleva `noindex` para que no salga en buscadores). El código sigue siendo visible en el repositorio público.
 - `movimientos.js` define `window.CONTA = {moneda, tope_bloque, movimientos: [{fecha, tipo, quien, torneo, concepto, importe, nota}]}`. Tipos: donacion (+), premios (−), devolucion (+), gasto (−). Importe siempre positivo. Fecha "AAAA-MM-DD" o "AAAA-MM". Se muestran en el orden del archivo.
-- Datos a 25 nov 2026: donaciones de Divo 1.000.000, Calvosotelo 200.000 y gatoflauta 100.000 (oct), Calvosotelo 100.000 (14 nov) y AL Toni 40.000 (nov, sin día). Premios: bloque 1 599.989 y bloque 2 599.999 (cifras de la web, el 2 pendiente de que Josemi confirme lo pagado). Devueltos del bloque 1: 202.994 (total final). Saldo 443.006 cc: 1,1 bloques con el tope de 400.000.
+- Datos a 25 nov 2026: donaciones de Divo 1.000.000, Calvosotelo 200.000 y gatoflauta 100.000 (oct), Calvosotelo 100.000 (14 nov) y AL Toni 40.000 (nov, sin día). Premios: bloque 1 599.989 y bloque 2 599.999 (cifras de la web; el 2 está pendiente de repartir a 25 nov y puede haber devoluciones). Devueltos del bloque 1: 202.994 (total final). Saldo 443.006 cc: 1,1 bloques con el tope de 400.000.
 
 ## Pendiente / ideas
 
