@@ -24,7 +24,7 @@ scripts/
   fetch_players.py    Descarga BH/CH semanales (solo las semanas que faltan o pueden cambiar)
   build.py            Une CSV nuevos al histórico y genera site/data/sh.js (con bh y torneos)
 .github/workflows/update.yml   Descarga + build + commit cada 3 días (9:23 UTC, días 1, 4, 7… del mes); Netlify publica
-netlify.toml          Netlify publica solo site/, y solo si cambia algo dentro (ignore)
+netlify.toml          Netlify publica solo site/, y solo si el último commit cambia site/ o netlify.toml (ignore con HEAD^)
 .claude/launch.json   Servidor local (python -m http.server 8765) para la vista previa
 docs/                 Artículo de presentación y tabla del concurso en BBCode phpBB
 site/contabilidad/    Cuentas del concurso, PÚBLICAS desde el 25 nov 2026: index.html + contabilidad.js + movimientos.js (la "base de datos")
