@@ -3,5 +3,5 @@ __pycache__/
 .venv/
 .claude/settings.local.json
 
-# Contabilidad privada: no se sube a GitHub ni la publica Netlify
-contabilidad/
+
+# (la contabilidad ahora es pública y está en site/contabilidad/)
